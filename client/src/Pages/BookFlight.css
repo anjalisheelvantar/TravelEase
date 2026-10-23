@@ -1,0 +1,1289 @@
+/* ==========================================
+   BOOK FLIGHT PAGE
+========================================== */
+
+.book-flight-page {
+  min-height: 100vh;
+  padding: 40px 20px 80px;
+  background: #f4f7fb;
+}
+
+.booking-container {
+  width: 100%;
+  max-width: 950px;
+  margin: auto;
+}
+
+
+/* ==========================================
+   STEPS
+========================================== */
+
+.booking-steps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 35px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #9ca3af;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.step span {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #d1d5db;
+  color: white;
+  font-size: 13px;
+}
+
+.step.active {
+  color: #2563eb;
+}
+
+.step.active span {
+  background: #2563eb;
+}
+
+.step-line {
+  width: 50px;
+  height: 2px;
+  background: #d1d5db;
+}
+
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.booking-header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.header-icon {
+  font-size: 38px;
+}
+
+.booking-header h1 {
+  margin: 10px 0 5px;
+  font-size: 30px;
+  color: #1f2937;
+}
+
+.booking-header p {
+  margin: 0;
+  color: #6b7280;
+}
+
+
+/* ==========================================
+   MINI FLIGHT CARD
+========================================== */
+
+.mini-flight-card {
+  background: white;
+  border-radius: 14px;
+  padding: 22px 25px;
+  margin-bottom: 22px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+
+  border-left: 5px solid #2563eb;
+}
+
+.mini-flight-card h2 {
+  margin: 0;
+  color: #1f2937;
+  font-size: 20px;
+}
+
+.mini-flight-card p {
+  margin: 6px 0 0;
+  color: #6b7280;
+}
+
+.mini-route {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  font-size: 18px;
+  color: #1f2937;
+}
+
+
+/* ==========================================
+   PASSENGER CARD
+========================================== */
+
+.passenger-card {
+  background: white;
+  padding: 25px;
+  margin-bottom: 20px;
+  border-radius: 14px;
+
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.07);
+}
+
+.passenger-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 20px;
+}
+
+.passenger-title h2 {
+  margin: 0;
+  color: #1f2937;
+  font-size: 20px;
+}
+
+.remove-passenger {
+  border: none;
+  background: #fee2e2;
+  color: #dc2626;
+
+  padding: 8px 14px;
+  border-radius: 7px;
+
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.remove-passenger:hover {
+  background: #fecaca;
+}
+
+
+/* ==========================================
+   PASSENGER INPUT GRID
+========================================== */
+
+.passenger-grid {
+  display: grid;
+
+  grid-template-columns:
+    2fr
+    1fr
+    1fr;
+
+  gap: 18px;
+}
+
+.passenger-grid label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  font-size: 14px;
+
+  color: #374151;
+
+  font-weight: 600;
+}
+
+.passenger-grid input,
+.passenger-grid select {
+  width: 100%;
+
+  padding: 12px 14px;
+
+  border: 1px solid #d1d5db;
+
+  border-radius: 8px;
+
+  outline: none;
+
+  font-size: 14px;
+
+  box-sizing: border-box;
+
+  transition: 0.2s;
+}
+
+.passenger-grid input:focus,
+.passenger-grid select:focus {
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(37, 99, 235, 0.12);
+}
+
+
+/* ==========================================
+   BUTTONS
+========================================== */
+
+.add-passenger-button {
+  width: 100%;
+
+  padding: 13px;
+
+  border-radius: 9px;
+
+  border: 2px dashed #2563eb;
+
+  background: #eff6ff;
+
+  color: #2563eb;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  margin-bottom: 20px;
+}
+
+.add-passenger-button:hover {
+  background: #dbeafe;
+}
+
+.continue-button {
+  border: none;
+
+  background: #2563eb;
+
+  color: white;
+
+  padding: 14px 25px;
+
+  border-radius: 9px;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.continue-button:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.back-button {
+  border: none;
+
+  background: #e5e7eb;
+
+  color: #374151;
+
+  padding: 14px 25px;
+
+  border-radius: 9px;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.back-button:hover {
+  background: #d1d5db;
+}
+
+.full-back {
+  margin-top: 18px;
+}
+
+
+/* ==========================================
+   ERROR
+========================================== */
+
+.booking-error {
+  margin-bottom: 18px;
+
+  padding: 13px 16px;
+
+  background: #fee2e2;
+
+  color: #b91c1c;
+
+  border-radius: 8px;
+
+  font-size: 14px;
+}
+
+
+/* ==========================================
+   SUMMARY CARD
+========================================== */
+
+.summary-card {
+  background: white;
+
+  padding: 28px;
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 4px 18px
+    rgba(0, 0, 0, 0.07);
+
+  margin-bottom: 22px;
+}
+
+.summary-title {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding-bottom: 20px;
+
+  border-bottom:
+    1px solid #e5e7eb;
+}
+
+.summary-title h2 {
+  margin: 0;
+
+  color: #1f2937;
+}
+
+.summary-title p {
+  margin: 5px 0 0;
+
+  color: #6b7280;
+}
+
+.cabin-badge {
+  background: #dbeafe;
+
+  color: #2563eb;
+
+  padding: 7px 14px;
+
+  border-radius: 20px;
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+
+/* ==========================================
+   ROUTE
+========================================== */
+
+.summary-route {
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    100px
+    1fr;
+
+  align-items: center;
+
+  text-align: center;
+
+  padding: 30px 0;
+}
+
+.summary-route div:first-child {
+  text-align: left;
+}
+
+.summary-route div:last-child {
+  text-align: right;
+}
+
+.summary-route small {
+  display: block;
+
+  color: #9ca3af;
+
+  font-size: 11px;
+
+  margin-bottom: 6px;
+}
+
+.summary-route strong {
+  display: block;
+
+  font-size: 24px;
+
+  color: #1f2937;
+
+  margin-bottom: 6px;
+}
+
+.summary-route span {
+  color: #6b7280;
+}
+
+.summary-arrow {
+  font-size: 28px;
+}
+
+
+/* ==========================================
+   SUMMARY INFO
+========================================== */
+
+.summary-info {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 15px;
+
+  border-top:
+    1px solid #e5e7eb;
+
+  padding-top: 20px;
+}
+
+.summary-info div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 6px;
+}
+
+.summary-info small {
+  color: #9ca3af;
+
+  font-size: 11px;
+}
+
+.summary-info strong {
+  color: #1f2937;
+}
+
+
+/* ==========================================
+   PASSENGER SUMMARY
+========================================== */
+
+.passenger-summary {
+  background: white;
+
+  padding: 25px;
+
+  border-radius: 14px;
+
+  margin-bottom: 20px;
+
+  box-shadow:
+    0 4px 18px
+    rgba(0, 0, 0, 0.07);
+}
+
+.passenger-summary h2 {
+  margin-top: 0;
+
+  color: #1f2937;
+}
+
+.passenger-summary-row {
+  display: flex;
+
+  justify-content: space-between;
+
+  padding: 14px 0;
+
+  border-bottom:
+    1px solid #f1f5f9;
+}
+
+.passenger-summary-row:last-child {
+  border-bottom: none;
+}
+
+.passenger-summary-row span {
+  color: #6b7280;
+}
+
+
+/* ==========================================
+   FARE CARD
+========================================== */
+
+.fare-card {
+  background: white;
+
+  padding: 25px;
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 4px 18px
+    rgba(0, 0, 0, 0.07);
+
+  margin-bottom: 22px;
+}
+
+.fare-row {
+  display: flex;
+
+  justify-content: space-between;
+
+  padding: 10px 0;
+
+  color: #4b5563;
+}
+
+.fare-card hr {
+  border: none;
+
+  border-top:
+    1px solid #e5e7eb;
+
+  margin: 15px 0;
+}
+
+.total-row {
+  display: flex;
+
+  justify-content: space-between;
+
+  font-size: 20px;
+
+  color: #1f2937;
+}
+
+.total-row strong {
+  color: #2563eb;
+}
+
+.summary-actions {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+
+/* ==========================================
+   PAYMENT
+========================================== */
+
+.payment-card {
+  background: white;
+
+  padding: 28px;
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 4px 18px
+    rgba(0, 0, 0, 0.07);
+}
+
+.payment-card h2 {
+  margin-top: 0;
+
+  color: #1f2937;
+}
+
+.payment-option {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 18px;
+
+  border:
+    1px solid #e5e7eb;
+
+  border-radius: 10px;
+
+  margin-bottom: 12px;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.payment-option:hover {
+  border-color: #2563eb;
+
+  background: #f8fbff;
+}
+
+.payment-option input {
+  width: 18px;
+  height: 18px;
+}
+
+.payment-icon {
+  font-size: 25px;
+}
+
+.payment-option div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.payment-option small {
+  color: #6b7280;
+}
+
+.payment-total {
+  margin-top: 25px;
+
+  padding: 20px;
+
+  background: #eff6ff;
+
+  border-radius: 10px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  font-size: 18px;
+}
+
+.payment-total strong {
+  font-size: 24px;
+
+  color: #2563eb;
+}
+
+.pay-button {
+  width: 100%;
+
+  margin-top: 20px;
+
+  padding: 15px;
+
+  border: none;
+
+  border-radius: 9px;
+
+  background: #16a34a;
+
+  color: white;
+
+  font-size: 17px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.pay-button:hover {
+  background: #15803d;
+}
+
+.pay-button:disabled {
+  opacity: 0.7;
+
+  cursor: not-allowed;
+}
+
+.demo-payment-note {
+  text-align: center;
+
+  color: #6b7280;
+
+  font-size: 13px;
+
+  margin-top: 15px;
+}
+
+
+/* ==========================================
+   ERROR PAGE
+========================================== */
+
+.booking-error-page {
+  min-height: 100vh;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: #f4f7fb;
+
+  padding: 20px;
+}
+
+.booking-error-box {
+  background: white;
+
+  padding: 40px;
+
+  border-radius: 15px;
+
+  text-align: center;
+
+  box-shadow:
+    0 5px 25px
+    rgba(0, 0, 0, 0.1);
+}
+
+.booking-error-box button {
+  margin-top: 15px;
+
+  border: none;
+
+  background: #2563eb;
+
+  color: white;
+
+  padding: 12px 20px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+}
+
+
+/* ==========================================
+   TICKET PAGE
+========================================== */
+
+.ticket-page {
+  min-height: 100vh;
+
+  padding: 40px 20px 80px;
+
+  background: #f4f7fb;
+}
+
+.ticket-container {
+  max-width: 850px;
+
+  margin: auto;
+}
+
+
+/* ==========================================
+   SUCCESS
+========================================== */
+
+.success-message {
+  text-align: center;
+
+  margin-bottom: 30px;
+}
+
+.success-icon {
+  width: 65px;
+
+  height: 65px;
+
+  margin: auto;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: #16a34a;
+
+  color: white;
+
+  font-size: 35px;
+
+  font-weight: bold;
+}
+
+.success-message h1 {
+  margin-bottom: 5px;
+
+  color: #1f2937;
+}
+
+.success-message p {
+  color: #6b7280;
+}
+
+
+/* ==========================================
+   FLIGHT TICKET
+========================================== */
+
+.ticket {
+  background: white;
+
+  border-radius: 16px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 8px 30px
+    rgba(0, 0, 0, 0.1);
+}
+
+.ticket-header {
+  background: #2563eb;
+
+  color: white;
+
+  padding: 25px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+.brand {
+  font-size: 13px;
+
+  letter-spacing: 1px;
+}
+
+.ticket-header h2 {
+  margin: 8px 0 0;
+}
+
+.pnr {
+  text-align: right;
+
+  display: flex;
+
+  flex-direction: column;
+}
+
+.pnr small {
+  opacity: 0.8;
+}
+
+.pnr strong {
+  font-size: 20px;
+
+  letter-spacing: 1px;
+}
+
+
+/* ==========================================
+   AIRLINE
+========================================== */
+
+.ticket-airline {
+  padding: 25px;
+
+  border-bottom:
+    1px solid #e5e7eb;
+}
+
+.ticket-airline h2 {
+  margin: 0;
+
+  color: #1f2937;
+}
+
+.ticket-airline p {
+  color: #6b7280;
+}
+
+
+/* ==========================================
+   TICKET ROUTE
+========================================== */
+
+.ticket-route {
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    130px
+    1fr;
+
+  padding: 30px;
+
+  align-items: center;
+
+  text-align: center;
+}
+
+.ticket-route div:first-child {
+  text-align: left;
+}
+
+.ticket-route div:last-child {
+  text-align: right;
+}
+
+.ticket-route small {
+  display: block;
+
+  color: #9ca3af;
+
+  margin-bottom: 7px;
+}
+
+.ticket-route strong {
+  display: block;
+
+  font-size: 25px;
+
+  color: #1f2937;
+
+  margin-bottom: 6px;
+}
+
+.ticket-route span {
+  color: #6b7280;
+}
+
+.ticket-arrow {
+  color: #2563eb;
+
+  font-size: 18px;
+}
+
+
+/* ==========================================
+   TICKET DETAILS
+========================================== */
+
+.ticket-details {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 10px;
+
+  padding: 25px;
+
+  background: #f8fafc;
+
+  border-top:
+    1px solid #e5e7eb;
+
+  border-bottom:
+    1px solid #e5e7eb;
+}
+
+.ticket-details div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+.ticket-details small {
+  color: #9ca3af;
+
+  font-size: 10px;
+}
+
+.ticket-details strong {
+  color: #1f2937;
+}
+
+
+/* ==========================================
+   TICKET PASSENGERS
+========================================== */
+
+.ticket-passengers {
+  padding: 25px;
+}
+
+.ticket-passengers h3 {
+  margin-top: 0;
+
+  color: #1f2937;
+}
+
+.ticket-passenger {
+  display: grid;
+
+  grid-template-columns:
+    40px
+    1fr
+    100px
+    100px;
+
+  align-items: center;
+
+  padding: 14px 0;
+
+  border-bottom:
+    1px solid #f1f5f9;
+}
+
+.passenger-number {
+  width: 28px;
+
+  height: 28px;
+
+  border-radius: 50%;
+
+  background: #dbeafe;
+
+  color: #2563eb;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-weight: 600;
+}
+
+
+/* ==========================================
+   TICKET PAYMENT
+========================================== */
+
+.ticket-payment {
+  padding: 22px 25px;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr;
+
+  gap: 20px;
+
+  background: #f8fafc;
+
+  border-top:
+    1px solid #e5e7eb;
+}
+
+.ticket-payment div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 6px;
+}
+
+.ticket-payment span {
+  color: #6b7280;
+
+  font-size: 13px;
+}
+
+.paid-status {
+  color: #16a34a;
+}
+
+
+/* ==========================================
+   TICKET FOOTER
+========================================== */
+
+.ticket-footer {
+  padding: 18px 25px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  background: #1f2937;
+
+  color: white;
+
+  font-size: 13px;
+}
+
+
+/* ==========================================
+   TICKET BUTTONS
+========================================== */
+
+.ticket-actions {
+  display: flex;
+
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 12px;
+
+  margin-top: 25px;
+}
+
+.ticket-actions button {
+  border: none;
+
+  padding: 13px 20px;
+
+  border-radius: 9px;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.print-button {
+  background: #374151;
+
+  color: white;
+}
+
+.bookings-button {
+  background: #2563eb;
+
+  color: white;
+}
+
+.another-flight-button {
+  background: #16a34a;
+
+  color: white;
+}
+
+
+/* ==========================================
+   RESPONSIVE DESIGN
+========================================== */
+
+@media (max-width: 700px) {
+
+  .book-flight-page,
+  .ticket-page {
+    padding: 25px 12px 60px;
+  }
+
+  .booking-header h1 {
+    font-size: 25px;
+  }
+
+  .step-line {
+    width: 20px;
+  }
+
+  .step {
+    font-size: 11px;
+  }
+
+  .passenger-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mini-flight-card {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 15px;
+  }
+
+  .summary-route {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+
+  .summary-route div:first-child,
+  .summary-route div:last-child {
+    text-align: center;
+  }
+
+  .summary-info {
+    grid-template-columns: 1fr;
+  }
+
+  .summary-actions {
+    flex-direction: column;
+
+    gap: 12px;
+  }
+
+  .summary-actions button {
+    width: 100%;
+  }
+
+  .ticket-route {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+  }
+
+  .ticket-route div:first-child,
+  .ticket-route div:last-child {
+    text-align: center;
+  }
+
+  .ticket-details {
+    grid-template-columns:
+      1fr
+      1fr;
+  }
+
+  .ticket-passenger {
+    grid-template-columns:
+      35px
+      1fr;
+
+    gap: 8px;
+  }
+
+  .ticket-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 15px;
+  }
+
+  .pnr {
+    text-align: left;
+  }
+
+  .ticket-payment {
+    grid-template-columns: 1fr;
+  }
+
+  .ticket-footer {
+    flex-direction: column;
+
+    gap: 8px;
+  }
+
+  .passenger-summary-row {
+    flex-direction: column;
+
+    gap: 5px;
+  }
+
+}

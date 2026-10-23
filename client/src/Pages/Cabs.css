@@ -1,0 +1,1314 @@
+
+/* ==========================================
+   TRAVELEASE — CAB BOOKING PAGE
+   Flights-style hero and booking interface
+   ========================================== */
+
+.cab-page,
+.cab-page * {
+  box-sizing: border-box;
+}
+
+.cab-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 0 0 55px;
+  overflow-x: hidden;
+  background: #f4f7fa;
+  color: #182230;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* ==========================================
+   HERO VIDEO — SAME DIMENSIONS AS FLIGHTS
+   ========================================== */
+
+.cab-hero {
+  position: relative;
+  isolation: isolate;
+  width: calc(100% - 94px);
+  height: 484px;
+  min-height: 484px;
+  margin: 28px auto 0;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 22px;
+  background: #263746;
+}
+
+.cab-hero-video {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: none;
+  opacity: 1;
+}
+
+/* No blue tint over the video */
+.cab-hero-overlay {
+  display: none !important;
+  background: transparent !important;
+}
+
+/* Remove any previously applied pseudo-element overlay */
+.cab-hero::before,
+.cab-hero::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Actual heading class used in Cabs.jsx */
+.cab-hero-heading {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 35px 24px 0;
+  color: #ffffff;
+  text-align: center;
+  text-shadow: 0 2px 9px rgba(0, 0, 0, 0.65);
+}
+
+.cab-hero-eyebrow {
+  display: inline-block;
+  margin: 0 0 12px;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.cab-hero-heading h1 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(32px, 3.5vw, 46px);
+  font-weight: 750;
+  line-height: 1.15;
+  letter-spacing: -1px;
+}
+
+.cab-hero-heading h1 span {
+  color: #ffffff;
+}
+
+.cab-hero-heading p {
+  margin: 12px 0 0;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+/* ==========================================
+   CONTENT — OVERLAP HERO WITH SEARCH CARD
+   ========================================== */
+
+.cab-content {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  max-width: 1440px;
+  margin: -290px auto 0;
+  padding: 0 4%;
+}
+
+/* ==========================================
+   WHITE SEARCH CARD
+   ========================================== */
+
+.cab-search-panel {
+  position: relative;
+  z-index: 6;
+  width: 100%;
+  max-width: 1268px;
+  margin: 0 auto;
+  padding: 28px 30px;
+  border: 1px solid #e1e8f1;
+  border-radius: 19px;
+  background: #ffffff;
+  box-shadow: 0 14px 40px rgba(26, 45, 75, 0.13);
+  color: #182230;
+}
+
+/* Card heading and arrow */
+.cab-search-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 22px;
+}
+
+.cab-section-kicker {
+  display: inline-block;
+  margin-bottom: 7px;
+  color: #3061d1;
+  font-size: 12px;
+  font-weight: 750;
+  letter-spacing: 1.2px;
+  line-height: 1.4;
+}
+
+.cab-search-heading h2 {
+  margin: 0;
+  color: #182230;
+  font-size: 26px;
+  font-weight: 750;
+  line-height: 1.25;
+  letter-spacing: -0.4px;
+}
+
+.cab-search-heading p {
+  margin: 10px 0 0;
+  color: #66758b;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.cab-search-icon {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: #edf3ff;
+  color: #3061d1;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+/* ==========================================
+   SEARCH FORM — FOUR ALIGNED COLUMNS
+   ========================================== */
+
+.cab-search-panel form {
+  width: 100%;
+}
+
+.cab-form-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: start;
+  gap: 16px;
+  width: 100%;
+}
+
+.cab-field {
+  position: relative;
+  min-width: 0;
+  width: 100%;
+}
+
+.cab-field > label {
+  display: block;
+  margin: 0 0 10px;
+  color: #344054;
+  font-size: 12px;
+  font-weight: 750;
+  letter-spacing: 0.25px;
+  line-height: 1.4;
+}
+
+/* Input wrapper and icons */
+.cab-input-wrap {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+}
+
+.cab-input-icon {
+  position: absolute;
+  top: 50%;
+  left: 13px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #66758b;
+  font-size: 17px;
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+
+.cab-input-wrap input {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  height: 56px;
+  padding: 0 13px 0 40px;
+  border: 1px solid #dce4ef;
+  border-radius: 11px;
+  outline: none;
+  background: #ffffff;
+  color: #263246;
+  font-family: inherit;
+  font-size: 14px;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.cab-input-wrap input::placeholder {
+  color: #98a5b8;
+  opacity: 1;
+}
+
+.cab-input-wrap input:hover {
+  border-color: #b9c7dc;
+}
+
+.cab-input-wrap input:focus {
+  border-color: #3061d1;
+  box-shadow: 0 0 0 3px rgba(48, 97, 209, 0.1);
+}
+
+.cab-input-wrap input[type="date"],
+.cab-input-wrap input[type="time"] {
+  padding-right: 10px;
+}
+
+.cab-input-wrap input:disabled {
+  background: #f2f4f7;
+  cursor: not-allowed;
+}
+
+/* ==========================================
+   LOCATION SUGGESTIONS
+   ========================================== */
+
+.cab-location-field {
+  position: relative;
+}
+
+.cab-suggestions {
+  position: absolute;
+  top: calc(100% + 5px);
+  right: 0;
+  left: 0;
+  z-index: 50;
+  max-height: 250px;
+  overflow-y: auto;
+  padding: 6px;
+  border: 1px solid #e0e6ef;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 12px 28px rgba(16, 24, 40, 0.14);
+}
+
+.cab-suggestion {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  width: 100%;
+  padding: 11px 10px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: #344054;
+  font-family: inherit;
+  font-size: 13px;
+  line-height: 1.5;
+  text-align: left;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+}
+
+.cab-suggestion:hover {
+  background: #f0f5ff;
+  color: #244fb7;
+}
+
+.cab-suggestion-status {
+  padding: 12px 10px;
+  color: #667085;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* ==========================================
+   SEARCH ACTIONS
+   ========================================== */
+
+.cab-search-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 19px;
+}
+
+/* Current location — remove default browser button look */
+.cab-location-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 44px;
+  padding: 0 15px;
+  border: 1px solid #dce4ef;
+  border-radius: 10px;
+  background: #f8faff;
+  color: #344054;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 650;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.cab-location-button span {
+  color: #3061d1;
+  font-size: 17px;
+}
+
+.cab-location-button:hover {
+  border-color: #b7cafa;
+  background: #edf3ff;
+  color: #244fb7;
+}
+
+.cab-location-button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+/* Main search button */
+.cab-search-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-width: 165px;
+  min-height: 54px;
+  padding: 0 24px;
+  border: none;
+  border-radius: 11px;
+  background: #3061d1;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 750;
+  cursor: pointer;
+  box-shadow: 0 5px 12px rgba(48, 97, 209, 0.12);
+  transition:
+    background 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.cab-search-submit span {
+  font-size: 19px;
+  line-height: 1;
+}
+
+.cab-search-submit:hover {
+  background: #244fb7;
+  box-shadow: 0 7px 17px rgba(48, 97, 209, 0.22);
+  transform: translateY(-1px);
+}
+
+.cab-search-submit:disabled {
+  cursor: wait;
+  opacity: 0.7;
+  transform: none;
+}
+
+.cab-message {
+  margin: 16px 0 0;
+  padding: 12px 14px;
+  border: 1px solid #fecdca;
+  border-radius: 10px;
+  background: #fff4f2;
+  color: #b42318;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* ==========================================
+   RESULTS
+   ========================================== */
+
+.cab-results {
+  width: 100%;
+  margin: 45px auto 0;
+}
+
+.cab-results-title {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 22px;
+}
+
+.cab-results-title h2 {
+  margin: 0;
+  color: #182230;
+  font-size: 29px;
+  font-weight: 750;
+  letter-spacing: -0.6px;
+}
+
+.cab-results-title p {
+  margin: 9px 0 0;
+  color: #66758b;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.cab-route-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  padding: 9px 13px;
+  border: 1px solid #b7ebcd;
+  border-radius: 100px;
+  background: #ecfdf3;
+  color: #067647;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.cab-route-badge > span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #12b76a;
+}
+
+/* ==========================================
+   JOURNEY SUMMARY
+   ========================================== */
+
+.cab-journey-summary {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 28px;
+  margin-bottom: 28px;
+  padding: 25px;
+  border: 1px solid #e2e8f1;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 5px 20px rgba(16, 24, 40, 0.035);
+}
+
+.cab-journey-stops {
+  position: relative;
+  display: grid;
+  grid-template-columns: 12px minmax(0, 1fr);
+  align-content: center;
+  gap: 8px 13px;
+  min-width: 0;
+}
+
+.cab-stop-dot {
+  z-index: 1;
+  width: 11px;
+  height: 11px;
+  margin-top: 4px;
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px #3061d1;
+}
+
+.cab-stop-start {
+  background: #3061d1;
+}
+
+.cab-stop-end {
+  background: #12b76a;
+  box-shadow: 0 0 0 2px #12b76a;
+}
+
+.cab-stop-line {
+  position: absolute;
+  top: 17px;
+  bottom: 17px;
+  left: 5px;
+  width: 2px;
+  background: #d8e2f3;
+}
+
+.cab-stop-details {
+  min-width: 0;
+  padding-bottom: 13px;
+}
+
+.cab-stop-details:last-child {
+  padding-bottom: 0;
+}
+
+.cab-stop-details small,
+.cab-journey-stats small {
+  display: block;
+  margin-bottom: 6px;
+  color: #7b8799;
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: 1px;
+}
+
+.cab-stop-details strong {
+  display: block;
+  color: #253247;
+  font-size: 14px;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+.cab-journey-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  align-content: center;
+}
+
+.cab-journey-stats > div {
+  min-width: 0;
+  padding: 13px;
+  border-radius: 12px;
+  background: #f7f9fc;
+}
+
+.cab-stat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 31px;
+  height: 31px;
+  margin-bottom: 13px;
+  border-radius: 9px;
+  background: #eaf0ff;
+  color: #3061d1;
+  font-size: 17px;
+}
+
+.cab-journey-stats strong {
+  display: block;
+  color: #253247;
+  font-size: 14px;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+/* ==========================================
+   MAP HEADING AND MAP
+   ========================================== */
+
+.cab-map-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 30px 0 15px;
+}
+
+.cab-map-heading h3,
+.cab-options-heading h3 {
+  margin: 0;
+  color: #182230;
+  font-size: 21px;
+  font-weight: 750;
+}
+
+.cab-map-heading p {
+  margin: 7px 0 0;
+  color: #66758b;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.cab-map-source {
+  flex-shrink: 0;
+  color: #66758b;
+  font-size: 12px;
+}
+
+.cab-map {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  height: 390px;
+  margin-bottom: 35px;
+  overflow: hidden;
+  border: 1px solid #e1e8f1;
+  border-radius: 17px;
+  background: #e9eef5;
+  box-shadow: 0 6px 22px rgba(16, 24, 40, 0.06);
+}
+
+.cab-map .leaflet-container {
+  width: 100%;
+  height: 100%;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.cab-map .leaflet-control-attribution {
+  font-size: 10px;
+}
+
+/* ==========================================
+   RIDE OPTIONS
+   ========================================== */
+
+.cab-options-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 18px;
+  margin: 32px 0 18px;
+}
+
+.cab-options-heading > span {
+  color: #66758b;
+  font-size: 13px;
+}
+
+.cab-options-heading h3 {
+  font-size: 25px;
+}
+
+.cab-options-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.cab-option-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 22px;
+  border: 1px solid #e2e8f1;
+  border-radius: 17px;
+  background: #ffffff;
+  box-shadow: 0 5px 20px rgba(16, 24, 40, 0.04);
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.cab-option-card:hover {
+  border-color: #c4d3f5;
+  box-shadow: 0 10px 28px rgba(16, 24, 40, 0.08);
+  transform: translateY(-2px);
+}
+
+.cab-option-selected {
+  border: 2px solid #3061d1;
+  background: #f8faff;
+}
+
+.cab-card-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.cab-option-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 9px;
+  border-radius: 7px;
+  background: #edf3ff;
+  color: #3061d1;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.7px;
+}
+
+.cab-option-emoji {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 13px;
+  background: #f2f5fa;
+  font-size: 26px;
+}
+
+.cab-option-card h3 {
+  margin: 0;
+  color: #182230;
+  font-size: 21px;
+  font-weight: 750;
+}
+
+.cab-option-card > p {
+  min-height: 40px;
+  margin: 8px 0 15px;
+  color: #66758b;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.cab-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-bottom: 19px;
+}
+
+.cab-details span {
+  padding: 7px 9px;
+  border-radius: 8px;
+  background: #f6f8fb;
+  color: #526176;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.cab-fare {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 17px;
+  border-top: 1px solid #edf0f5;
+}
+
+.cab-fare > div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.cab-fare strong {
+  color: #182230;
+  font-size: 27px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.cab-fare > div > span {
+  color: #7b8799;
+  font-size: 11px;
+}
+
+.cab-fare-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 10px;
+  background: #edf3ff;
+  color: #3061d1;
+  font-size: 18px;
+}
+
+.cab-rate-note {
+  margin-top: 10px;
+  color: #7b8799;
+  font-size: 11px;
+}
+
+.cab-select-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  min-height: 47px;
+  margin-top: 18px;
+  padding: 0 15px;
+  border: 1px solid #d8e3fa;
+  border-radius: 10px;
+  background: #f2f6ff;
+  color: #285bc7;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 750;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.cab-select-button:hover,
+.cab-select-button-active {
+  border-color: #3061d1;
+  background: #3061d1;
+  color: #ffffff;
+}
+
+.cab-select-button span {
+  font-size: 18px;
+}
+
+/* ==========================================
+   DISCLAIMER
+   ========================================== */
+
+.cab-disclaimer {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 25px;
+  padding: 17px 19px;
+  border: 1px solid #e2e8f1;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.cab-disclaimer > span {
+  flex-shrink: 0;
+  color: #3061d1;
+  font-size: 17px;
+}
+
+.cab-disclaimer p {
+  margin: 0;
+  color: #66758b;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* ==========================================
+   TABLET
+   ========================================== */
+
+@media (max-width: 1024px) {
+  .cab-hero {
+    width: calc(100% - 48px);
+  }
+
+  .cab-content {
+    margin-top: -260px;
+    padding-right: 3%;
+    padding-left: 3%;
+  }
+
+  .cab-search-panel {
+    padding: 25px;
+  }
+
+  .cab-form-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 17px;
+  }
+
+  .cab-journey-summary {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .cab-options-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width: 640px) {
+  .cab-page {
+    padding-bottom: 30px;
+  }
+
+  .cab-hero {
+    width: calc(100% - 24px);
+    height: 484px;
+    min-height: 484px;
+    margin-top: 12px;
+    border-radius: 16px;
+  }
+
+  .cab-hero-video {
+    object-position: center;
+  }
+
+  .cab-hero-heading {
+    padding: 30px 15px 0;
+  }
+
+  .cab-hero-eyebrow {
+    margin-bottom: 9px;
+    font-size: 10px;
+    letter-spacing: 1.3px;
+  }
+
+  .cab-hero-heading h1 {
+    font-size: clamp(27px, 7.5vw, 35px);
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+  }
+
+  .cab-hero-heading p {
+    margin-top: 9px;
+    font-size: 13px;
+  }
+
+  .cab-content {
+    margin-top: -215px;
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+
+  .cab-search-panel {
+    padding: 21px 16px;
+    border-radius: 15px;
+  }
+
+  .cab-search-heading {
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .cab-search-heading h2 {
+    font-size: 22px;
+  }
+
+  .cab-search-heading p {
+    font-size: 13px;
+  }
+
+  .cab-search-icon {
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+  }
+
+  .cab-form-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 15px;
+  }
+
+  .cab-input-wrap input {
+    height: 51px;
+  }
+
+  .cab-search-footer {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 11px;
+  }
+
+  .cab-location-button,
+  .cab-search-submit {
+    width: 100%;
+    min-height: 49px;
+  }
+
+  .cab-results {
+    margin-top: 32px;
+  }
+
+  .cab-results-title {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .cab-results-title h2 {
+    font-size: 25px;
+  }
+
+  .cab-journey-summary {
+    gap: 20px;
+    padding: 18px;
+  }
+
+  .cab-journey-stats {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .cab-journey-stats > div {
+    display: grid;
+    grid-template-columns: 35px minmax(0, 1fr);
+    align-items: center;
+    column-gap: 10px;
+  }
+
+  .cab-stat-icon {
+    grid-row: span 2;
+    margin-bottom: 0;
+  }
+
+  .cab-journey-stats small {
+    margin-bottom: 3px;
+  }
+
+  .cab-map-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .cab-map {
+    height: 300px;
+    border-radius: 13px;
+  }
+
+  .cab-options-heading {
+    align-items: flex-start;
+  }
+
+  .cab-options-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .cab-option-card {
+    padding: 19px;
+  }
+}
+
+/* ==========================================
+   VERY SMALL SCREENS
+   ========================================== */
+
+@media (max-width: 380px) {
+  .cab-hero {
+    width: calc(100% - 16px);
+    border-radius: 13px;
+  }
+
+  .cab-hero-heading {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .cab-hero-heading h1 {
+    font-size: 27px;
+  }
+
+  .cab-content {
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+
+  .cab-search-panel {
+    padding: 17px 12px;
+  }
+}
+
+/* ===== FINAL CAB HERO TYPOGRAPHY FIX ===== */
+
+/* Remove the arrow icon in the top-right of the search card */
+.cab-search-icon {
+  display: none !important;
+}
+
+/* Match the Flights page heading style */
+.cab-hero-heading {
+  font-family: "Segoe UI", Arial, sans-serif !important;
+  color: #ffffff !important;
+  text-align: center;
+}
+
+.cab-hero-heading h1 {
+  font-family: "Segoe UI", Arial, sans-serif !important;
+  font-size: clamp(34px, 3.2vw, 46px) !important;
+  font-weight: 750 !important;
+  letter-spacing: -1.2px !important;
+  line-height: 1.2 !important;
+  color: #ffffff !important;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.cab-hero-heading h1 span {
+  color: #ffffff !important;
+}
+
+.cab-hero-heading p {
+  font-family: "Segoe UI", Arial, sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  color: #ffffff !important;
+  line-height: 1.6 !important;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+}
+
+.cab-hero-eyebrow {
+  font-family: "Segoe UI", Arial, sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  letter-spacing: 1.8px !important;
+  color: #ffffff !important;
+}
+
+/* Keep the existing search card unchanged */
+.cab-search-panel {
+  background: #ffffff !important;
+  color: #182230;
+}
+
+.cab-search-heading h2 {
+  font-family: "Segoe UI", Arial, sans-serif !important;
+  font-weight: 750 !important;
+  color: #182230 !important;
+}
+
+.cab-search-heading p {
+  font-family: "Segoe UI", Arial, sans-serif !important;
+  color: #66758b !important;
+}
+
+/* ===== MATCH THE TRAVELEASE HERO FONT STYLE ===== */
+
+.cab-hero-heading {
+  font-family: "Segoe UI", Arial, sans-serif !important;
+  text-align: center;
+  color: #fff;
+}
+
+/* Main heading: same serif style as the Hotels/Flights design */
+.cab-hero-heading h1,
+.cab-hero-heading h1 span {
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-size: clamp(42px, 4.2vw, 64px) !important;
+  font-weight: 500 !important;
+  line-height: 1.15 !important;
+  letter-spacing: -1.5px !important;
+  color: #fff !important;
+  text-align: center;
+  text-shadow: 0 2px 9px rgba(0, 0, 0, 0.35);
+}
+
+/* Subtitle: same sans-serif style */
+.cab-hero-heading p {
+  max-width: 650px;
+  margin: 8px 0 24px !important;
+  font-family: "Segoe UI", Arial, sans-serif !important;
+  font-size: 17px !important;
+  font-weight: 500 !important;
+  line-height: 1.7 !important;
+  color: #fff !important;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
+}
+
+/* Eyebrow: matching pill style */
+.cab-hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 18px !important;
+  padding: 9px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 30px;
+  background: rgba(0, 0, 0, 0.2);
+  color: #fff !important;
+  font-family: "Segoe UI", Arial, sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  letter-spacing: 1.2px !important;
+  line-height: 1.5;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.65);
+}
+
+@media (max-width: 640px) {
+  .cab-hero-heading h1,
+  .cab-hero-heading h1 span {
+    font-size: clamp(34px, 8vw, 42px) !important;
+    letter-spacing: -1px !important;
+  }
+
+  .cab-hero-heading p {
+    font-size: 15px !important;
+  }
+}
+
+/* ===== FIX CAB HERO ALIGNMENT ===== */
+
+.cab-hero {
+  position: relative;
+  height: 484px;
+  min-height: 484px;
+  overflow: hidden;
+}
+
+/* Keep the heading centered above the search card */
+.cab-hero-heading {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 36px 24px 0 !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Eyebrow */
+.cab-hero-eyebrow {
+  margin-bottom: 18px !important;
+}
+
+/* Main title */
+.cab-hero-heading h1 {
+  margin: 0 !important;
+  font-size: clamp(38px, 4vw, 58px) !important;
+  line-height: 1.12 !important;
+}
+
+/* Subtitle: keep fully visible above the search card */
+.cab-hero-heading p {
+  margin: 14px 0 0 !important;
+  font-size: 16px !important;
+  line-height: 1.5 !important;
+}
+
+/* Move the card slightly lower so it doesn't cover the subtitle */
+.cab-content {
+  margin-top: -270px !important;
+}
+
+/* Preserve the card's width and alignment */
+.cab-search-panel {
+  width: 100%;
+  max-width: 1268px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .cab-content {
+    margin-top: -245px !important;
+  }
+
+  .cab-hero-heading {
+    padding-top: 32px !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .cab-hero-heading {
+    padding: 28px 14px 0 !important;
+  }
+
+  .cab-hero-heading h1 {
+    font-size: 34px !important;
+  }
+
+  .cab-hero-heading p {
+    font-size: 14px !important;
+  }
+
+  .cab-content {
+    margin-top: -205px !important;
+  }
+}

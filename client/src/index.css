@@ -1,0 +1,297 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f5f7fb;
+  color: #1f2937;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+input,
+select {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.page {
+  min-height: 70vh;
+  padding: 50px 0;
+}
+
+.page-title {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.page-title h1 {
+  font-size: 36px;
+  color: #123c69;
+  margin-bottom: 10px;
+}
+
+.page-title p {
+  color: #64748b;
+}
+
+.navbar {
+  background: #123c69;
+  color: white;
+  padding: 16px 0;
+}
+
+.nav-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-links a:hover {
+  color: #ffd166;
+}
+
+.login-btn {
+  background: white;
+  color: #123c69 !important;
+  padding: 9px 16px;
+  border-radius: 7px;
+}
+
+.hero {
+  background: linear-gradient(135deg, #123c69, #1976a8);
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 19px;
+  margin-bottom: 30px;
+}
+
+.hero-btn {
+  display: inline-block;
+  background: #ffd166;
+  color: #17202a;
+  padding: 13px 25px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.section {
+  padding: 50px 0;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.transport-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
+}
+
+.transport-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: 0.2s;
+}
+
+.transport-card:hover {
+  transform: translateY(-5px);
+}
+
+.transport-icon {
+  font-size: 40px;
+  margin-bottom: 12px;
+}
+
+.transport-card h3 {
+  margin-bottom: 8px;
+}
+
+.search-box {
+  background: white;
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 7px;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 7px;
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #1976a8;
+}
+
+.primary-btn {
+  border: none;
+  background: #123c69;
+  color: white;
+  padding: 12px 22px;
+  border-radius: 7px;
+  font-weight: bold;
+}
+
+.primary-btn:hover {
+  background: #0c2b4d;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.auth-container {
+  max-width: 450px;
+  margin: 60px auto;
+  background: white;
+  padding: 35px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.auth-container h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #123c69;
+}
+
+.auth-link {
+  color: #1976a8;
+  font-weight: bold;
+}
+
+.ai-box {
+  max-width: 950px;
+  margin: auto;
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.ai-result {
+  margin-top: 25px;
+  padding: 25px;
+  background: #eef6ff;
+  border-radius: 10px;
+  white-space: pre-wrap;
+  line-height: 1.7;
+}
+
+.footer {
+  background: #111827;
+  color: white;
+  padding: 30px 0;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.footer p {
+  color: #cbd5e1;
+  margin-top: 8px;
+}
+
+@media (max-width: 900px) {
+  .transport-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-links {
+    gap: 10px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+  }
+
+  .transport-grid {
+    grid-template-columns: 1fr;
+  }
+}

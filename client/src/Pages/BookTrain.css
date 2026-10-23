@@ -1,0 +1,1056 @@
+/* =========================================
+   GLOBAL
+========================================= */
+
+.book-train-page,
+.ticket-page {
+  min-height: 100vh;
+  padding: 40px 20px;
+  background: #f5f7fb;
+}
+
+.booking-container,
+.ticket-container {
+  max-width: 900px;
+  margin: auto;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.booking-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.booking-header > span {
+  font-size: 42px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.booking-header h1 {
+  font-size: 32px;
+  margin: 0;
+  color: #1e293b;
+}
+
+.booking-header p {
+  color: #64748b;
+  margin-top: 8px;
+}
+
+
+/* =========================================
+   MINI TRAIN CARD
+========================================= */
+
+.mini-train-card {
+  background: white;
+  padding: 22px;
+  border-radius: 14px;
+  margin-bottom: 25px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.mini-train-card h2 {
+  margin: 0;
+  font-size: 20px;
+  color: #1e293b;
+}
+
+.mini-train-card p {
+  margin: 7px 0 0;
+  color: #64748b;
+}
+
+.mini-train-card strong {
+  font-size: 18px;
+  color: #2563eb;
+}
+
+
+/* =========================================
+   PASSENGER CARD
+========================================= */
+
+.passenger-card {
+  background: white;
+  padding: 25px;
+  border-radius: 14px;
+  margin-bottom: 20px;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.passenger-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 20px;
+}
+
+.passenger-title h2 {
+  margin: 0;
+  font-size: 20px;
+  color: #1e293b;
+}
+
+.passenger-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.2fr;
+  gap: 18px;
+}
+
+.passenger-grid label {
+  display: block;
+  margin-bottom: 8px;
+
+  font-size: 14px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.passenger-grid input,
+.passenger-grid select {
+  width: 100%;
+  padding: 13px;
+
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+
+  font-size: 15px;
+
+  outline: none;
+  box-sizing: border-box;
+
+  transition: 0.2s;
+}
+
+.passenger-grid input:focus,
+.passenger-grid select:focus {
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(37, 99, 235, 0.12);
+}
+
+
+/* =========================================
+   REMOVE PASSENGER
+========================================= */
+
+.remove-passenger {
+  border: none;
+
+  background: #fee2e2;
+  color: #dc2626;
+
+  padding: 8px 14px;
+  border-radius: 7px;
+
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.remove-passenger:hover {
+  background: #fecaca;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.add-passenger-button {
+  width: 100%;
+
+  padding: 14px;
+
+  border: 2px dashed #2563eb;
+  border-radius: 10px;
+
+  background: #eff6ff;
+  color: #2563eb;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  margin-bottom: 20px;
+}
+
+.add-passenger-button:hover {
+  background: #dbeafe;
+}
+
+.continue-button,
+.pay-button {
+  width: 100%;
+
+  padding: 16px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #2563eb;
+  color: white;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.continue-button:hover,
+.pay-button:hover {
+  background: #1d4ed8;
+}
+
+.continue-button:disabled,
+.pay-button:disabled {
+  background: #94a3b8;
+  cursor: not-allowed;
+}
+
+.back-button {
+  padding: 13px 20px;
+
+  border: none;
+  border-radius: 9px;
+
+  background: #e2e8f0;
+  color: #334155;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  margin-top: 20px;
+}
+
+.back-button:hover {
+  background: #cbd5e1;
+}
+
+
+/* =========================================
+   ERROR
+========================================= */
+
+.booking-error {
+  background: #fee2e2;
+  color: #b91c1c;
+
+  padding: 14px;
+  border-radius: 9px;
+
+  margin-bottom: 18px;
+
+  font-size: 14px;
+}
+
+
+/* =========================================
+   SUMMARY CARD
+========================================= */
+
+.summary-card {
+  background: white;
+
+  padding: 28px;
+  border-radius: 15px;
+
+  box-shadow:
+    0 5px 20px
+    rgba(0, 0, 0, 0.08);
+
+  margin-bottom: 22px;
+}
+
+.summary-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.summary-title h2 {
+  margin: 0;
+  color: #1e293b;
+}
+
+.summary-title span {
+  background: #dbeafe;
+  color: #2563eb;
+
+  padding: 7px 13px;
+  border-radius: 20px;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+
+/* =========================================
+   ROUTE
+========================================= */
+
+.summary-route,
+.ticket-route {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  margin: 30px 0;
+}
+
+.summary-route > div,
+.ticket-route > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.summary-route small,
+.ticket-route small {
+  color: #94a3b8;
+  font-size: 11px;
+}
+
+.summary-route strong,
+.ticket-route strong {
+  font-size: 23px;
+  color: #1e293b;
+
+  margin: 5px 0;
+}
+
+.summary-route span,
+.ticket-route span {
+  color: #64748b;
+}
+
+.summary-arrow,
+.ticket-arrow {
+  color: #2563eb;
+  font-size: 18px;
+  padding: 0 20px;
+}
+
+
+/* =========================================
+   SUMMARY INFO
+========================================= */
+
+.summary-info {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 15px;
+
+  border-top:
+    1px solid #e2e8f0;
+
+  padding-top: 20px;
+}
+
+.summary-info div {
+  display: flex;
+  flex-direction: column;
+}
+
+.summary-info small {
+  color: #94a3b8;
+}
+
+.summary-info strong {
+  margin-top: 6px;
+  color: #1e293b;
+}
+
+
+/* =========================================
+   PASSENGER SUMMARY
+========================================= */
+
+.passenger-summary {
+  background: white;
+
+  padding: 25px;
+  border-radius: 14px;
+
+  margin-bottom: 22px;
+
+  box-shadow:
+    0 5px 20px
+    rgba(0, 0, 0, 0.08);
+}
+
+.passenger-summary h2 {
+  margin-top: 0;
+  color: #1e293b;
+}
+
+.passenger-summary-row {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 14px 0;
+
+  border-bottom:
+    1px solid #e2e8f0;
+}
+
+.passenger-summary-row:last-child {
+  border-bottom: none;
+}
+
+.passenger-summary-row span {
+  color: #64748b;
+}
+
+
+/* =========================================
+   FARE CARD
+========================================= */
+
+.fare-card {
+  background: white;
+
+  padding: 25px;
+  border-radius: 14px;
+
+  box-shadow:
+    0 5px 20px
+    rgba(0, 0, 0, 0.08);
+}
+
+.fare-card > div {
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: 15px;
+}
+
+.fare-card hr {
+  border: none;
+
+  border-top:
+    1px solid #e2e8f0;
+
+  margin: 20px 0;
+}
+
+.total-row {
+  font-size: 20px;
+}
+
+.total-row strong {
+  color: #16a34a;
+}
+
+.demo-note {
+  display: block;
+
+  color: #94a3b8;
+
+  margin-top: 10px;
+}
+
+
+/* =========================================
+   SUMMARY ACTIONS
+========================================= */
+
+.summary-actions {
+  display: flex;
+  gap: 15px;
+
+  margin-top: 25px;
+}
+
+.summary-actions .back-button {
+  width: 30%;
+  margin-top: 0;
+}
+
+.summary-actions .continue-button {
+  width: 70%;
+}
+
+
+/* =========================================
+   PAYMENT
+========================================= */
+
+.payment-card {
+  background: white;
+
+  padding: 28px;
+  border-radius: 15px;
+
+  box-shadow:
+    0 5px 20px
+    rgba(0, 0, 0, 0.08);
+}
+
+.payment-card h2 {
+  margin-top: 0;
+  color: #1e293b;
+}
+
+.payment-option {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 17px;
+
+  border:
+    1px solid #e2e8f0;
+
+  border-radius: 10px;
+
+  margin-bottom: 14px;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.payment-option:hover {
+  background: #f8fafc;
+  border-color: #2563eb;
+}
+
+.payment-option input {
+  accent-color: #2563eb;
+}
+
+.payment-option > span {
+  font-size: 25px;
+}
+
+.payment-option div {
+  display: flex;
+  flex-direction: column;
+}
+
+.payment-option small {
+  color: #64748b;
+  margin-top: 3px;
+}
+
+.payment-total {
+  display: flex;
+
+  justify-content: space-between;
+
+  padding: 20px 0;
+
+  margin-top: 10px;
+
+  border-top:
+    1px solid #e2e8f0;
+
+  font-size: 18px;
+}
+
+.payment-total strong {
+  color: #16a34a;
+  font-size: 23px;
+}
+
+.demo-payment-note {
+  text-align: center;
+
+  color: #64748b;
+
+  font-size: 13px;
+
+  margin-top: 15px;
+}
+
+
+/* =========================================
+   SUCCESS MESSAGE
+========================================= */
+
+.success-message {
+  text-align: center;
+
+  margin-bottom: 30px;
+}
+
+.success-icon {
+  width: 70px;
+  height: 70px;
+
+  background: #16a34a;
+  color: white;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 38px;
+
+  margin: auto auto 15px;
+}
+
+.success-message h1 {
+  margin: 0;
+  color: #16a34a;
+}
+
+.success-message p {
+  color: #64748b;
+}
+
+
+/* =========================================
+   TICKET
+========================================= */
+
+.ticket {
+  background: white;
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 8px 30px
+    rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================
+   TICKET HEADER
+========================================= */
+
+.ticket-header {
+  background: #2563eb;
+
+  color: white;
+
+  padding: 25px;
+
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ticket-header span {
+  font-size: 13px;
+}
+
+.ticket-header h2 {
+  margin: 7px 0 0;
+}
+
+.pnr {
+  text-align: right;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.pnr small {
+  opacity: 0.8;
+}
+
+.pnr strong {
+  font-size: 20px;
+}
+
+
+/* =========================================
+   TRAIN INFO
+========================================= */
+
+.ticket-train {
+  padding: 25px;
+
+  border-bottom:
+    1px dashed #cbd5e1;
+}
+
+.ticket-train h2 {
+  margin: 0 0 7px;
+  color: #1e293b;
+}
+
+.ticket-train span {
+  color: #64748b;
+}
+
+
+/* =========================================
+   TICKET ROUTE
+========================================= */
+
+.ticket-route {
+  padding: 0 25px;
+}
+
+
+/* =========================================
+   TICKET DETAILS
+========================================= */
+
+.ticket-details {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  background: #f8fafc;
+
+  padding: 20px 25px;
+
+  gap: 15px;
+}
+
+.ticket-details div {
+  display: flex;
+  flex-direction: column;
+}
+
+.ticket-details small {
+  color: #94a3b8;
+  font-size: 11px;
+}
+
+.ticket-details strong {
+  color: #1e293b;
+  margin-top: 5px;
+}
+
+
+/* =========================================
+   TICKET PASSENGERS
+========================================= */
+
+.ticket-passengers {
+  padding: 25px;
+}
+
+.ticket-passengers h3 {
+  margin-top: 0;
+  color: #1e293b;
+}
+
+.ticket-passenger {
+  display: grid;
+
+  grid-template-columns:
+    40px 2fr 1fr 1fr;
+
+  gap: 10px;
+
+  padding: 13px 0;
+
+  border-bottom:
+    1px solid #e2e8f0;
+
+  align-items: center;
+}
+
+.ticket-passenger > span:first-child {
+  width: 28px;
+  height: 28px;
+
+  background: #dbeafe;
+
+  color: #2563eb;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* =========================================
+   TICKET PAYMENT
+========================================= */
+
+.ticket-payment {
+  display: flex;
+
+  justify-content: space-between;
+
+  padding: 20px 25px;
+
+  background: #f0fdf4;
+
+  color: #166534;
+}
+
+.ticket-payment strong {
+  color: #16a34a;
+}
+
+
+/* =========================================
+   TICKET FOOTER
+========================================= */
+
+.ticket-footer {
+  display: flex;
+
+  justify-content: space-between;
+
+  padding: 18px 25px;
+
+  font-size: 12px;
+
+  color: #64748b;
+
+  border-top:
+    1px dashed #cbd5e1;
+}
+
+
+/* =========================================
+   TICKET ACTIONS
+========================================= */
+
+.ticket-actions {
+  display: flex;
+
+  gap: 15px;
+
+  margin-top: 25px;
+
+  justify-content: center;
+}
+
+.print-button,
+.bookings-button,
+.train-button {
+  border: none;
+
+  padding: 14px 20px;
+
+  border-radius: 9px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.print-button {
+  background: #2563eb;
+  color: white;
+}
+
+.print-button:hover {
+  background: #1d4ed8;
+}
+
+.bookings-button {
+  background: #16a34a;
+  color: white;
+}
+
+.bookings-button:hover {
+  background: #15803d;
+}
+
+.train-button {
+  background: #e2e8f0;
+  color: #334155;
+}
+
+.train-button:hover {
+  background: #cbd5e1;
+}
+
+
+/* =========================================
+   ERROR PAGE
+========================================= */
+
+.booking-error-page {
+  min-height: 70vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 20px;
+}
+
+.booking-error-page button {
+  padding: 12px 20px;
+
+  border: none;
+
+  background: #2563eb;
+  color: white;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+}
+
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 700px) {
+
+  .book-train-page,
+  .ticket-page {
+    padding: 25px 12px;
+  }
+
+  .booking-header h1 {
+    font-size: 26px;
+  }
+
+  .mini-train-card {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 15px;
+  }
+
+  .passenger-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .summary-route,
+  .ticket-route {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 15px;
+  }
+
+  .summary-arrow,
+  .ticket-arrow {
+    transform: rotate(90deg);
+    padding: 0;
+  }
+
+  .summary-info,
+  .ticket-details {
+    grid-template-columns: 1fr;
+  }
+
+  .summary-actions {
+    flex-direction: column;
+  }
+
+  .summary-actions .back-button,
+  .summary-actions .continue-button {
+    width: 100%;
+  }
+
+  .ticket-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 20px;
+  }
+
+  .pnr {
+    text-align: left;
+  }
+
+  .ticket-passenger {
+    grid-template-columns:
+      35px 1fr;
+
+    gap: 8px;
+  }
+
+  .ticket-actions {
+    flex-direction: column;
+  }
+
+  .print-button,
+  .bookings-button,
+  .train-button {
+    width: 100%;
+  }
+
+  .passenger-summary-row {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 5px;
+  }
+}
+
+
+/* =========================================
+   PRINT TICKET
+========================================= */
+
+@media print {
+
+  body * {
+    visibility: hidden;
+  }
+
+  .ticket,
+  .ticket * {
+    visibility: visible;
+  }
+
+  .ticket {
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 100%;
+
+    box-shadow: none;
+  }
+
+  .ticket-actions,
+  .success-message {
+    display: none !important;
+  }
+}

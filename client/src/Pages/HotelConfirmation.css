@@ -1,0 +1,133 @@
+
+.hotel-confirmation-page {
+  min-height: 100vh;
+  padding: 40px 18px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: #f4f7fb;
+  color: #172033;
+  box-sizing: border-box;
+}
+
+.hotel-confirmation-card {
+  width: 100%;
+  max-width: 700px;
+  padding: 32px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 12px 38px rgba(20, 35, 60, 0.12);
+  box-sizing: border-box;
+}
+
+.confirmation-check {
+  width: 58px;
+  height: 58px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: #d9f7e8;
+  color: #087443;
+  font-size: 32px;
+  font-weight: 800;
+}
+
+.confirmation-eyebrow {
+  margin: 22px 0 8px;
+  color: #147d64;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.hotel-confirmation-card h1 {
+  margin: 8px 0;
+  font-size: 30px;
+}
+
+.confirmation-intro {
+  color: #687386;
+  line-height: 1.6;
+}
+
+.confirmation-reference {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 24px 0;
+  padding: 18px;
+  border: 1px dashed #8ab5ef;
+  border-radius: 12px;
+  background: #f2f7ff;
+}
+
+.confirmation-reference span {
+  color: #59687c;
+  font-size: 13px;
+}
+
+.confirmation-reference strong {
+  color: #1457b8;
+  font-size: 22px;
+  overflow-wrap: anywhere;
+}
+
+.confirmation-section {
+  padding: 10px 0 18px;
+  border-bottom: 1px solid #e7edf4;
+}
+
+.confirmation-section h2 {
+  font-size: 18px;
+}
+
+.confirmation-section p,
+.confirmation-status p {
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.confirmation-status {
+  margin-top: 20px;
+  padding: 14px 18px;
+  border-radius: 10px;
+  background: #edf9f1;
+  color: #17643c;
+}
+
+.confirmation-disclaimer {
+  margin: 20px 0;
+  color: #687386;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.confirmation-home-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 13px 18px;
+  border-radius: 9px;
+  background: #1769e0;
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.confirmation-home-btn:hover {
+  background: #1054b9;
+}
+
+@media (max-width: 560px) {
+  .hotel-confirmation-page {
+    padding: 18px 10px;
+  }
+
+  .hotel-confirmation-card {
+    padding: 22px 16px;
+  }
+
+  .hotel-confirmation-card h1 {
+    font-size: 25px;
+  }
+}

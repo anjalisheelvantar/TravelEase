@@ -1,0 +1,23 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="15" fill="#153453"/>
+
+  <!-- T -->
+  <path d="M10 15H40L35 23H28L23 46H14L20 23H8Z"
+        fill="#FFFFFF"/>
+
+  <!-- E -->
+  <path d="M34 29H53L50 36H39L38 40H48L45 47H36L35 50H47L44 57H24L29 33Z"
+        fill="#54C2B0"/>
+
+  <!-- Flight trail -->
+  <path d="M9 45C20 39 33 32 45 21"
+        fill="none"
+        stroke="#FFFFFF"
+        stroke-width="2.5"
+        stroke-linecap="round"/>
+
+  <!-- Airplane -->
+  <path d="M42 18L56 11L51 24L47 21L44 29L41 27L43 21Z"
+        fill="#FFFFFF"/>
+</svg>

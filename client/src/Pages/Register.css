@@ -1,0 +1,495 @@
+
+/* ========================================
+   TRAVELEASE REGISTER
+   Side-by-side layout | Navy + Teal
+======================================== */
+
+.register-page,
+.register-page * {
+  box-sizing: border-box;
+}
+
+.register-page {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 54px);
+  padding: 38px 5% 58px;
+  overflow: hidden;
+  background: #10243b;
+  color: #ffffff;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* Background travel video */
+
+.register-background-video {
+  position: absolute;
+  z-index: -3;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Coordinated dark overlay */
+
+.register-video-overlay {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    rgba(7, 26, 44, 0.91) 0%,
+    rgba(10, 39, 58, 0.79) 48%,
+    rgba(5, 25, 42, 0.74) 100%
+  );
+}
+
+/* Main two-column layout */
+
+.register-layout {
+  width: 100%;
+  max-width: 1190px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(370px, 0.88fr);
+  align-items: center;
+  gap: clamp(35px, 6vw, 90px);
+  margin: auto;
+}
+
+/* LEFT: Welcome section */
+
+.register-welcome {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  padding: 18px 0;
+}
+
+.register-brand {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 11px;
+  color: #ffffff;
+  font-size: 25px;
+  font-weight: 750;
+  letter-spacing: -0.8px;
+  text-decoration: none;
+}
+
+.register-brand-icon {
+  display: grid;
+  place-items: center;
+  width: 43px;
+  height: 43px;
+  border-radius: 13px;
+  background: #dff7f2;
+  color: #087e86;
+  font-size: 24px;
+}
+
+.register-brand > span:last-child > span {
+  color: #80e1dc;
+}
+
+.register-welcome-content {
+  margin-top: 65px;
+}
+
+.register-eyebrow {
+  display: inline-block;
+  color: #8ce1dc;
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: 2px;
+}
+
+.register-welcome-content > h1 {
+  max-width: 620px;
+  margin: 18px 0;
+  color: #ffffff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(38px, 4.1vw, 57px);
+  font-weight: 500;
+  line-height: 1.13;
+  letter-spacing: -1.7px;
+}
+
+.register-welcome-content > h1 span {
+  display: block;
+  color: #8ce1dc;
+}
+
+.register-welcome-description {
+  max-width: 500px;
+  margin: 0;
+  color: #d0e0eb;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+/* Welcome benefits */
+
+.register-benefits {
+  display: grid;
+  gap: 21px;
+  margin-top: 34px;
+}
+
+.register-benefit {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.register-benefit-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 38px;
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(140, 225, 220, 0.28);
+  border-radius: 12px;
+  background: rgba(140, 225, 220, 0.1);
+  color: #8ce1dc;
+  font-size: 20px;
+}
+
+.register-benefit h3 {
+  margin: 0 0 5px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.register-benefit p {
+  margin: 0;
+  color: #c0d2df;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.register-welcome-footer {
+  margin: 40px 0 0;
+  color: #a9c7d6;
+  font-size: 12px;
+  letter-spacing: 0.3px;
+}
+
+/* RIGHT: Form card */
+
+.register-card {
+  width: 100%;
+  max-width: 450px;
+  justify-self: end;
+  padding: 34px 34px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 22px;
+  background: #ffffff;
+  color: #18344e;
+  box-shadow: 0 24px 65px rgba(0, 0, 0, 0.27);
+  animation: register-card-appear 0.45s ease both;
+}
+
+@keyframes register-card-appear {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.register-card-heading {
+  margin-bottom: 24px;
+}
+
+.register-card-label {
+  display: inline-block;
+  margin-bottom: 13px;
+  color: #087e86;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.7px;
+}
+
+.register-card-heading h2 {
+  margin: 0 0 9px;
+  color: #173653;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(27px, 2.5vw, 33px);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.8px;
+}
+
+.register-card-heading p {
+  margin: 0;
+  color: #718195;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* Form fields */
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+
+.register-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.register-field label {
+  color: #29445e;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.register-field input {
+  display: block;
+  width: 100%;
+  height: 47px;
+  padding: 0 13px;
+  border: 1px solid #dce5ed;
+  border-radius: 10px;
+  outline: none;
+  background: #f8fafc;
+  color: #18344e;
+  font-family: inherit;
+  font-size: 13px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.register-field input::placeholder {
+  color: #9aa8b6;
+}
+
+.register-field input:focus {
+  border-color: #45aaa4;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(59, 170, 165, 0.12);
+}
+
+/* Password visibility */
+
+.register-password-wrap {
+  position: relative;
+}
+
+.register-password-wrap input {
+  padding-right: 62px;
+}
+
+.register-show-password {
+  position: absolute;
+  top: 50%;
+  right: 11px;
+  padding: 5px;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  color: #087e86;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Submit button */
+
+.register-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  width: 100%;
+  min-height: 49px;
+  margin-top: 4px;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 10px;
+  background: #087e86;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(8, 126, 134, 0.18);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.register-submit:hover:not(:disabled) {
+  transform: translateY(-2px);
+  background: #066b73;
+}
+
+.register-submit:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.register-submit span {
+  font-size: 19px;
+}
+
+/* Error feedback */
+
+.register-error {
+  margin: -9px 0 17px;
+  padding: 11px 13px;
+  border: 1px solid #f0caca;
+  border-radius: 9px;
+  background: #fff4f4;
+  color: #a52b35;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* Login prompt */
+
+.register-login-prompt {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 21px;
+  color: #718195;
+  font-size: 12px;
+}
+
+.register-login-prompt a {
+  color: #087e86;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.register-login-prompt a:hover {
+  text-decoration: underline;
+}
+
+.register-card-footer {
+  margin-top: 22px;
+  padding-top: 15px;
+  border-top: 1px solid #edf1f5;
+  color: #8a9aaa;
+  text-align: center;
+  font-size: 10px;
+}
+
+/* Copyright */
+
+.register-copyright {
+  position: absolute;
+  right: 15px;
+  bottom: 14px;
+  left: 15px;
+  color: rgba(255, 255, 255, 0.78);
+  text-align: center;
+  font-size: 11px;
+}
+
+/* Tablet layout */
+
+@media (max-width: 950px) {
+  .register-page {
+    padding: 32px 4% 55px;
+  }
+
+  .register-layout {
+    grid-template-columns: minmax(0, 1fr) minmax(330px, 0.9fr);
+    gap: 30px;
+  }
+
+  .register-welcome-content {
+    margin-top: 45px;
+  }
+
+  .register-welcome-content > h1 {
+    font-size: clamp(34px, 4.5vw, 45px);
+  }
+
+  .register-card {
+    padding: 29px 25px 22px;
+  }
+}
+
+/* Mobile: stack the welcome and form */
+
+@media (max-width: 700px) {
+  .register-page {
+    align-items: flex-start;
+    padding: 28px 18px 55px;
+    overflow: auto;
+  }
+
+  .register-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+    max-width: 460px;
+  }
+
+  .register-welcome {
+    padding: 0;
+  }
+
+  .register-welcome-content {
+    margin-top: 30px;
+  }
+
+  .register-welcome-content > h1 {
+    max-width: 440px;
+    margin: 12px 0;
+    font-size: clamp(34px, 8vw, 43px);
+  }
+
+  .register-welcome-description {
+    font-size: 13px;
+  }
+
+  .register-benefits {
+    gap: 15px;
+    margin-top: 22px;
+  }
+
+  .register-welcome-footer {
+    margin-top: 22px;
+  }
+
+  .register-card {
+    max-width: none;
+    justify-self: stretch;
+    padding: 28px 24px 22px;
+  }
+
+  .register-copyright {
+    position: static;
+    margin-top: 25px;
+  }
+}
+
+/* Reduced motion accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .register-card {
+    animation: none;
+  }
+
+  .register-field input,
+  .register-submit {
+    transition: none;
+  }
+}
