@@ -469,7 +469,10 @@ const routeLine = Array.isArray(route?.routeCoordinates)
   loop
   playsInline
 >
-  <source src={cabVideo} type="video/mp4" />
+  <source
+  src="https://res.cloudinary.com/gffv994z/video/upload/v1792826136/cab.mp4"
+  type="video/mp4"
+/>
 </video>
 
 <div className="cab-hero-overlay" />

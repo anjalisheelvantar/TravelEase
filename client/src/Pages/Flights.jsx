@@ -383,10 +383,10 @@ function Flights() {
           muted
           playsInline
         >
-          <source
-            src={flightVideo}
-            type="video/mp4"
-          />
+         <source
+  src="https://res.cloudinary.com/gffv994z/video/upload/v1792826121/flight-video.mp4"
+  type="video/mp4"
+/>
 
           Your browser does not support video.
         </video>

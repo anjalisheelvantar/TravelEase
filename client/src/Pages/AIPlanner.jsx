@@ -101,7 +101,7 @@ function AIPlanner() {
   playsInline
 >
  <source
-  src="https://res.cloudinary.com/gffv994z/video/upload/v1792825440/travel-video.mp4"
+  src="https://res.cloudinary.com/gffv994z/video/upload/v1792826052/ai-travel.mp4"
   type="video/mp4"
 />
 </video>

@@ -457,7 +457,10 @@
       playsInline
       preload="auto"
     >
-      <source src={trainVideo} type="video/mp4" />
+      <source
+  src="https://res.cloudinary.com/gffv994z/video/upload/v1792826052/train.mp4"
+  type="video/mp4"
+/>
     </video>
 
     <div className="trains-hero-content">
