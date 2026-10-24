@@ -8,7 +8,7 @@ import BookCab from "./Pages/BookCab";
 import Home from "./Pages/Home";
 import Flights from "./Pages/Flights";
 import Trains from "./Pages/Trains";
-import Cabs from "./Pages/cabs";
+import Cabs from "./Pages/Cabs";
 import Hotels from "./Pages/Hotels";
 
 import Login from "./Pages/Login";
