@@ -23,3 +23,6 @@ dist/
 .DS_Store
 # Large video files
 client/src/assets/*.mp4client/public/videos/*.mp4
+
+client/public/videos/*.mp4
+client/src/assets/*.mp4
