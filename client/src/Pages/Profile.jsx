@@ -1,7 +1,7 @@
 
 import { Link, useNavigate } from "react-router-dom";
 import "./Profile.css";
-import travelVideo from "../assets/travel-video.mp4";
+const travelVideo = "/videos/travel-video.mp4";
 
 function Profile() {
   const navigate = useNavigate();
@@ -38,7 +38,7 @@ function Profile() {
         playsInline
         aria-hidden="true"
       >
-        <source src={travelVideo} type="video/mp4" />
+        <source src="/videos/travel-video.mp4" type="video/mp4" />
       </video>
 
       <div className="profile-video-overlay" />

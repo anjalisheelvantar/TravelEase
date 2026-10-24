@@ -1,7 +1,7 @@
 
 import { Link } from "react-router-dom";
 import "./Dashboard.css";
-import travelVideo from "../assets/travel-video.mp4";
+const travelVideo = "/videos/travel-video.mp4";
 
 
 function getUserName() {
@@ -95,7 +95,7 @@ function Dashboard() {
   preload="auto"
   aria-hidden="true"
 >
-  <source src={travelVideo} type="video/mp4" />
+  <source src="/videos/travel-video.mp4" type="video/mp4" />
 </video>
 
       <div className="dashboard-video-overlay" />

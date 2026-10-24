@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { GoogleLogin } from "@react-oauth/google";
 import "./Login.css";
-import travelVideo from "../assets/travel-video.mp4";
+const travelVideo = "/videos/travel-video.mp4";
 
 function Login() {
   const [email, setEmail] = useState(
@@ -143,7 +143,7 @@ navigate("/", { replace: true });
   playsInline
   aria-hidden="true"
 >
-  <source src={travelVideo} type="video/mp4" />
+ <source src="/videos/travel-video.mp4" type="video/mp4" />
 </video>
 
 <div className="login-video-overlay" />
