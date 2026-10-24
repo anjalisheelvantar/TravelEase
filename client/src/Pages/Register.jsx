@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Register.css";
-import travelVideo from "../assets/travel-video.mp4";
+const travelVideo = "/videos/travel-video.mp4";
 
 function Register() {
   const [name, setName] = useState("");

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
 import "./AIPlanner.css";
-import aiTravelVideo from "../assets/ai-travel.mp4";
+const aiTravelVideo = "/videos/ai-travel.mp4";
 
 function AIPlanner() {
   const location = useLocation();

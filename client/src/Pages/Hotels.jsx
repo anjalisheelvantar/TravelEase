@@ -3,7 +3,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./Hotels.css";
-import hotelVideo from "../assets/hotel-background.mp4";
+const hotelVideo = "/videos/hotel-background.mp4";
+
 
 const API_URL = "http://localhost:5000/api";
 

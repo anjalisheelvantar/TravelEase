@@ -12,7 +12,8 @@ import {
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import "./Cabs.css";
-import cabVideo from "../assets/cab.mp4";
+const cabVideo = "/videos/cab.mp4";
+
 
 delete L.Icon.Default.prototype._getIconUrl;
 

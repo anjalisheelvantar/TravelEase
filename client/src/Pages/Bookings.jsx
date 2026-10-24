@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Bookings.css";
-import travelVideo from "../assets/travel-video.mp4";
+const travelVideo = "/videos/travel-video.mp4";
 
 function Bookings() {
   const navigate = useNavigate();

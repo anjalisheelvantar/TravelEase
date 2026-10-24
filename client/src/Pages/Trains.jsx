@@ -1,7 +1,8 @@
   import { useState } from "react";
   import { useNavigate } from "react-router-dom";
   import "./Trains.css";
-  import trainVideo from "../assets/train.mp4";
+ const trainVideo = "/videos/train.mp4";
+
 
   function Trains() {
 
