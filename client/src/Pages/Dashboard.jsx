@@ -86,17 +86,20 @@ function Dashboard() {
   return (
     <div className="dashboard-page">
       {/* Full dashboard background video */}
-     <video
-  className="dashboard-background-video"
-  autoPlay
-  muted
-  loop
-  playsInline
-  preload="auto"
-  aria-hidden="true"
->
-  <source src="/videos/travel-video.mp4" type="video/mp4" />
-</video>
+      <video
+        className="dashboard-background-video"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        aria-hidden="true"
+      >
+        <source
+          src="https://res.cloudinary.com/gffv994z/video/upload/v1792825440/travel-video.mp4"
+          type="video/mp4"
+        />
+      </video>
 
       <div className="dashboard-video-overlay" />
 

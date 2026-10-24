@@ -172,7 +172,10 @@ function Hotels() {
           preload="auto"
           aria-hidden="true"
         >
-          <source src={hotelVideo} type="video/mp4" />
+    <source
+  src="https://res.cloudinary.com/gffv994z/video/upload/v1792825106/hotel-background_1.mp4"
+  type="video/mp4"
+/>
         </video>
 
         {/* Keep the video's original colors */}

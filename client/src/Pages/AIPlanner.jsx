@@ -100,7 +100,10 @@ function AIPlanner() {
   loop
   playsInline
 >
-  <source src={aiTravelVideo} type="video/mp4" />
+ <source
+  src="https://res.cloudinary.com/gffv994z/video/upload/v1792825440/travel-video.mp4"
+  type="video/mp4"
+/>
 </video>
 
           <span className="ai-eyebrow">

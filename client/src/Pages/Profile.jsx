@@ -38,7 +38,10 @@ function Profile() {
         playsInline
         aria-hidden="true"
       >
-        <source src="/videos/travel-video.mp4" type="video/mp4" />
+       <source
+  src="https://res.cloudinary.com/gffv994z/video/upload/v1792825440/travel-video.mp4"
+  type="video/mp4"
+/>
       </video>
 
       <div className="profile-video-overlay" />

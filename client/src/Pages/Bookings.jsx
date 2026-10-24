@@ -215,7 +215,10 @@ function Bookings() {
         playsInline
         preload="auto"
       >
-        <source src={travelVideo} type="video/mp4" />
+        <source
+  src="https://res.cloudinary.com/gffv994z/video/upload/v1792825440/travel-video.mp4"
+  type="video/mp4"
+/>
       </video>
       <div className="bookings-video-overlay"></div>
     </div>

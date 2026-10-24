@@ -17,7 +17,10 @@ function Home() {
       {/* HERO WITH VIDEO BACKGROUND */}
       <section className="hero">
         <video className="hero-video" autoPlay muted loop playsInline>
-          <source src="/videos/travel-video.mp4" type="video/mp4" />
+        <source
+  src="https://res.cloudinary.com/gffv994z/video/upload/v1792825440/travel-video.mp4"
+  type="video/mp4"
+/>
         </video>
 
         <div className="hero-overlay"></div>
