@@ -40,37 +40,57 @@ function Flights() {
   // LOAD ALL INDIAN AIRPORTS
   // =====================================================
 
-  useEffect(() => {
-    const loadAirports = async () => {
-      try {
-        setAirportsLoading(true);
 
-        const response = await fetch(
-          "http://localhost:5000/api/flights/airports"
-        );
+useEffect(() => {
+  const controller = new AbortController();
 
-        const data = await response.json();
+  const loadAirports = async () => {
+    try {
+      setAirportsLoading(true);
+      setError("");
 
-        if (!response.ok) {
-          throw new Error(
-            data.message || "Unable to load airports"
-          );
+      const response = await fetch(
+        "https://travelease-backend-qbth.onrender.com/api/flights/airports",
+        {
+          method: "GET",
+          headers: {
+            Accept: "application/json",
+          },
+          signal: controller.signal,
         }
+      );
 
-        setAirports(data.airports || []);
-      } catch (error) {
-        console.error("Airport loading error:", error);
+      if (!response.ok) {
+        throw new Error(`Airport API failed: ${response.status}`);
+      }
 
-        setError(
-          "Unable to load Indian airports. Please make sure the backend is running."
-        );
-      } finally {
+      const data = await response.json();
+
+      if (!Array.isArray(data.airports)) {
+        console.error("Unexpected airport response:", data);
+        throw new Error("Invalid airport data received.");
+      }
+
+      setAirports(data.airports);
+    } catch (error) {
+      if (error.name === "AbortError") return;
+
+      console.error("Airport loading error:", error);
+      setError(
+        "Unable to load Indian airports. Please refresh the page and try again."
+      );
+    } finally {
+      if (!controller.signal.aborted) {
         setAirportsLoading(false);
       }
-    };
+    }
+  };
 
-    loadAirports();
-  }, []);
+  loadAirports();
+
+  return () => controller.abort();
+}, []);
+
 
   // =====================================================
   // FILTER AIRPORTS
@@ -310,7 +330,7 @@ function Flights() {
       });
 
       const response = await fetch(
-        `http://localhost:5000/api/flights/search?${params.toString()}`
+        `https://travelease-backend-qbth.onrender.com/api/flights/search?${params.toString()}`
       );
 
       const data = await response.json();
