@@ -49,7 +49,7 @@ function AIPlanner() {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/ai/trip-plan",
+        "https://travelease-backend-qbth.onrender.com/api/ai/trip-plan",
         {
           ...form,
           days: Number(form.days),

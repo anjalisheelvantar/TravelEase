@@ -3,7 +3,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./ExploreIndia.css";
 
-const API_BASE_URL = "http://localhost:5000/api/ai";
+const API_BASE_URL = "https://travelease-backend-qbth.onrender.com/api/ai";
 
 const destinations = [
   {

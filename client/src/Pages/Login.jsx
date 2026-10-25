@@ -55,7 +55,7 @@ navigate("/", { replace: true });
       setLoading(true);
 
       const response = await fetch(
-        "http://localhost:5000/api/auth/login",
+        "https://travelease-backend-qbth.onrender.com/api/auth/login",
         {
           method: "POST",
           headers: {
@@ -101,7 +101,7 @@ navigate("/", { replace: true });
       setLoading(true);
 
       const response = await fetch(
-        "http://localhost:5000/api/auth/google",
+        "https://travelease-backend-qbth.onrender.com/api/auth/google",
         {
           method: "POST",
           headers: {

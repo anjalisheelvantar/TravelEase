@@ -143,7 +143,7 @@ function BookCab() {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/bookings",
+        "https://travelease-backend-qbth.onrender.com/api/bookings",
         {
           method: "POST",
           headers: {

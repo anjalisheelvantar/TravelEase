@@ -34,7 +34,7 @@ function TrainSearch() {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/trains/search?from=${encodeURIComponent(
+        `https://travelease-backend-qbth.onrender.com/api/trains/search?from=${encodeURIComponent(
           from
         )}&to=${encodeURIComponent(to)}`
       );

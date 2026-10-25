@@ -26,7 +26,7 @@ L.Icon.Default.mergeOptions({
     "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
 });
 
-const API = "http://localhost:5000/api/cabs";
+const API = "https://travelease-backend-qbth.onrender.com/api/cabs";
 
 const cabOptions = [
   {

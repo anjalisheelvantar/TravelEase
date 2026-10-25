@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./BookFlight.css";
 
-const API_URL = "http://localhost:5000/api";
+const API_URL = "https://travelease-backend-qbth.onrender.com/api";
 
 // ==========================================
 // FORMAT PRICE USING THE FLIGHT CURRENCY

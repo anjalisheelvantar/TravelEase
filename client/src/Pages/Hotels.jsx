@@ -6,7 +6,7 @@ import "./Hotels.css";
 const hotelVideo = "/videos/hotel-background.mp4";
 
 
-const API_URL = "http://localhost:5000/api";
+const API_URL = "https://travelease-backend-qbth.onrender.com/api";
 
 function Hotels() {
   const [location, setLocation] = useState("");

@@ -106,7 +106,7 @@ function Bookings() {
       setError("");
 
       const response = await fetch(
-        `http://localhost:5000/api/bookings/user/${userId}`
+        `https://travelease-backend-qbth.onrender.com/api/bookings/user/${userId}`
       );
 
       const result = await response.json();
@@ -144,7 +144,7 @@ function Bookings() {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/bookings/${booking._id}/cancel`,
+        `https://travelease-backend-qbth.onrender.com/api/bookings/${booking._id}/cancel`,
         {
           method: "PUT",
           headers: {

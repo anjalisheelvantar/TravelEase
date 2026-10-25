@@ -77,7 +77,7 @@
 
         const response = await fetch(
 
-          `http://localhost:5000/api/trains/stations?q=${encodeURIComponent(
+          `https://travelease-backend-qbth.onrender.com/api/trains/stations?q=${encodeURIComponent(
             value
           )}`
 
@@ -253,7 +253,7 @@
       try {
 
         const url =
-          `http://localhost:5000/api/trains/search` +
+          `https://travelease-backend-qbth.onrender.com/api/trains/search` +
           `?from=${encodeURIComponent(fromCode)}` +
           `&to=${encodeURIComponent(toCode)}` +
           (date
