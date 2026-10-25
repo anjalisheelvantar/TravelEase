@@ -541,53 +541,24 @@
                   {showFromDropdown &&
                     fromStations.length > 0 && (
 
-                      <div className="station-dropdown">
 
-                        {fromStations.map(
-                          (
-                            station,
-                            index
-                          ) => (
+<div
+  key={station.code || index}
+  className="station-option"
+  onPointerDown={(e) => {
+    e.preventDefault();
+    selectFromStation(station);
+  }}
+>
+  <strong>
+    {station.name || station.code}
+  </strong>
 
-                            <div
+  <span>
+    {station.code}
+  </span>
+</div>
 
-                              key={
-                                station.code ||
-                                index
-                              }
-
-                              className="station-option"
-
-                              onClick={() =>
-                                selectFromStation(
-                                  station
-                                )
-                              }
-
-                            >
-
-                              <strong>
-
-                                {
-                                  station.name ||
-                                  station.code
-                                }
-
-                              </strong>
-
-
-                              <span>
-
-                                {station.code}
-
-                              </span>
-
-                            </div>
-
-                          )
-                        )}
-
-                      </div>
 
                     )}
 
@@ -642,40 +613,19 @@
                             index
                           ) => (
 
-                            <div
+                            
+<div
+  key={station.code || index}
+  className="station-option"
+  onPointerDown={(e) => {
+    e.preventDefault();
+    selectToStation(station);
+  }}
+>
+  <strong>{station.name || station.code}</strong>
+  <span>{station.code}</span>
+</div>
 
-                              key={
-                                station.code ||
-                                index
-                              }
-
-                              className="station-option"
-
-                              onClick={() =>
-                                selectToStation(
-                                  station
-                                )
-                              }
-
-                            >
-
-                              <strong>
-
-                                {
-                                  station.name ||
-                                  station.code
-                                }
-
-                              </strong>
-
-
-                              <span>
-
-                                {station.code}
-
-                              </span>
-
-                            </div>
 
                           )
                         )}
