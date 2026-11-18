@@ -538,8 +538,28 @@
                   />
 
 
-                  {showFromDropdown &&
-                    fromStations.length > 0 && (
+                  
+{showFromDropdown &&
+  fromStations.length > 0 && (
+    <div className="station-dropdown">
+      {fromStations.map((station, index) => (
+        <div
+          key={station.code || index}
+          className="station-option"
+          onPointerDown={(e) => {
+            e.preventDefault();
+            selectFromStation(station);
+          }}
+        >
+          <strong>
+            {station.name || station.code}
+          </strong>
+
+          <span>{station.code}</span>
+        </div>
+      ))}
+    </div>
+  )}
 
 
 <div
@@ -559,8 +579,6 @@
   </span>
 </div>
 
-
-                    )}
 
                 </div>
 
