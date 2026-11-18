@@ -5,7 +5,9 @@ import "./Navbar.css";
 
 function Navbar() {
   const navigate = useNavigate();
+
   const [menuOpen, setMenuOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const menuRef = useRef(null);
 
   const token = localStorage.getItem("token");
@@ -27,6 +29,11 @@ function Navbar() {
     user.email?.split("@")[0] ||
     "Traveler";
 
+  const closeMenus = () => {
+    setMenuOpen(false);
+    setMobileMenuOpen(false);
+  };
+
   useEffect(() => {
     function handleOutsideClick(event) {
       if (menuRef.current && !menuRef.current.contains(event.target)) {
@@ -35,7 +42,10 @@ function Navbar() {
     }
 
     function handleEscape(event) {
-      if (event.key === "Escape") setMenuOpen(false);
+      if (event.key === "Escape") {
+        setMenuOpen(false);
+        setMobileMenuOpen(false);
+      }
     }
 
     document.addEventListener("mousedown", handleOutsideClick);
@@ -50,7 +60,7 @@ function Navbar() {
   const logout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
-    setMenuOpen(false);
+    closeMenus();
     navigate("/login", { replace: true });
     window.location.reload();
   };
@@ -58,23 +68,47 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="nav-container">
-        <Link to="/" className="logo">
+
+        <Link to="/" className="logo" onClick={closeMenus}>
           <span className="logo-icon">✈️</span>
           <span>TravelEase</span>
         </Link>
 
-        <div className="nav-links">
-          <Link to="/">Home</Link>
-          <Link to="/flights">Flights</Link>
-          <Link to="/trains">Trains</Link>
-          <Link to="/cabs">Cabs</Link>
-          <Link to="/hotels">Hotels</Link>
-          <Link to="/ai-planner" className="ai-planner-link">
+        <button
+          type="button"
+          className={`mobile-menu-toggle ${mobileMenuOpen ? "active" : ""}`}
+          onClick={() => setMobileMenuOpen((open) => !open)}
+          aria-label="Toggle navigation menu"
+          aria-expanded={mobileMenuOpen}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div className={`nav-links ${mobileMenuOpen ? "mobile-open" : ""}`}>
+
+          <Link to="/" onClick={closeMenus}>Home</Link>
+          <Link to="/flights" onClick={closeMenus}>Flights</Link>
+          <Link to="/trains" onClick={closeMenus}>Trains</Link>
+          <Link to="/cabs" onClick={closeMenus}>Cabs</Link>
+          <Link to="/hotels" onClick={closeMenus}>Hotels</Link>
+
+          <Link
+            to="/ai-planner"
+            className="ai-planner-link"
+            onClick={closeMenus}
+          >
             ✨ AI Planner
           </Link>
-          <Link to="/budget-tracker" className="budget-tracker-link">
-  ₹ Budget Tracker
-</Link>
+
+          <Link
+            to="/budget-tracker"
+            className="budget-tracker-link"
+            onClick={closeMenus}
+          >
+            ₹ Budget Tracker
+          </Link>
 
           {loggedIn ? (
             <div className="profile-dropdown" ref={menuRef}>
@@ -101,15 +135,15 @@ function Navbar() {
                     {user.email && <span>{user.email}</span>}
                   </div>
 
-                  <Link to="/profile" onClick={() => setMenuOpen(false)}>
+                  <Link to="/profile" onClick={closeMenus}>
                     <span>👤</span> My Profile
                   </Link>
 
-                  <Link to="/dashboard" onClick={() => setMenuOpen(false)}>
+                  <Link to="/dashboard" onClick={closeMenus}>
                     <span>▦</span> Dashboard
                   </Link>
 
-                  <Link to="/bookings" onClick={() => setMenuOpen(false)}>
+                  <Link to="/bookings" onClick={closeMenus}>
                     <span>▤</span> My Bookings
                   </Link>
 
@@ -120,7 +154,7 @@ function Navbar() {
               )}
             </div>
           ) : (
-            <Link to="/login" className="login-btn">
+            <Link to="/login" className="login-btn" onClick={closeMenus}>
               Login
             </Link>
           )}

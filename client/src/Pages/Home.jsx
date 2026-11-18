@@ -1,7 +1,6 @@
 
 import { Link } from "react-router-dom";
 import "./Home.css";
-const travelVideo = "/videos/travel-video.mp4";
 import ExploreIndia from "./ExploreIndia.jsx";
 
 const services = [
@@ -14,19 +13,28 @@ const services = [
 function Home() {
   return (
     <div className="home-page">
-      {/* HERO WITH VIDEO BACKGROUND */}
+
+      {/* HERO SECTION */}
       <section className="hero">
-        <video className="hero-video" autoPlay muted loop playsInline>
-        <source
-  src="https://res.cloudinary.com/gffv994z/video/upload/v1792825440/travel-video.mp4"
-  type="video/mp4"
-/>
+        <video
+          className="hero-video"
+          autoPlay
+          muted
+          loop
+          playsInline
+        >
+          <source
+            src="https://res.cloudinary.com/gffv994z/video/upload/v1792825440/travel-video.mp4"
+            type="video/mp4"
+          />
         </video>
 
         <div className="hero-overlay"></div>
 
         <div className="container hero-content">
-          <div className="hero-badge">🌍 Explore • Discover • Travel</div>
+          <div className="hero-badge">
+            🌍 Explore • Discover • Travel
+          </div>
 
           <h1>
             Travel Smarter with
@@ -34,8 +42,8 @@ function Home() {
           </h1>
 
           <p>
-            Plan, compare and manage your complete journey from one beautiful
-            platform.
+            Plan, compare and manage your complete journey
+            from one beautiful platform.
           </p>
 
           <div className="hero-buttons">
@@ -50,15 +58,20 @@ function Home() {
         </div>
       </section>
 
-      {/* SERVICES */}
+      {/* TRAVEL SERVICES */}
       <section className="section services-section">
         <div className="container">
+
           <div className="section-title">
-            <span className="section-tag">TRAVEL SERVICES</span>
+            <span className="section-tag">
+              TRAVEL SERVICES
+            </span>
 
             <h2>Everything You Need for Your Journey</h2>
 
-            <p>Book every part of your journey in one place.</p>
+            <p>
+              Book every part of your journey in one place.
+            </p>
           </div>
 
           <div className="transport-grid">
@@ -69,7 +82,9 @@ function Home() {
                 className="service-link"
               >
                 <div className="transport-card">
-                  <div className="transport-icon">{service.icon}</div>
+                  <div className="transport-icon">
+                    {service.icon}
+                  </div>
 
                   <h3>{service.title}</h3>
 
@@ -80,83 +95,128 @@ function Home() {
               </Link>
             ))}
           </div>
+
         </div>
       </section>
 
-      {/* AI SECTION */}
+      {/* AI PLANNING SECTION */}
+      <section className="ai-planning-section">
 
-<section className="ai-planning-section">
-  <div className="ai-planning-orb ai-orb-one" />
-  <div className="ai-planning-orb ai-orb-two" />
+        <div className="ai-planning-orb ai-orb-one"></div>
+        <div className="ai-planning-orb ai-orb-two"></div>
 
-  <div className="ai-planning-heading">
-    <span className="ai-planning-eyebrow">
-      ✦ YOUR JOURNEY, REIMAGINED
-    </span>
+        <div className="ai-planning-heading">
+          <span className="ai-planning-eyebrow">
+            ✦ YOUR JOURNEY, REIMAGINED
+          </span>
 
-    <h2>
-      Travel smarter with <span>AI</span>
-    </h2>
+          <h2>
+            Travel smarter with <span>AI</span>
+          </h2>
 
-    <p>
-      Thoughtful recommendations. Smarter budgets. Journeys made for you.
-    </p>
-  </div>
+          <p>
+            Thoughtful recommendations. Smarter budgets.
+            Journeys made for you.
+          </p>
+        </div>
 
-  <div className="ai-glass-grid">
-    <article className="ai-glass-card">
-      <div className="ai-glass-icon ai-icon-purple">🧠</div>
-      <span className="ai-card-number">01 / DISCOVER</span>
-      <h3>Smart Recommendations</h3>
-      <p>
-        Discover routes and travel options tailored to your budget,
-        preferences and available time.
-      </p>
-      <span className="ai-card-decoration">↗</span>
-    </article>
+        <div className="ai-glass-grid">
 
-    <article className="ai-glass-card ai-glass-card-featured">
-      <div className="ai-glass-icon ai-icon-blue">✧</div>
-      <span className="ai-card-number">02 / OPTIMIZE</span>
-      <h3>Budget Optimization</h3>
-      <p>
-        Make every rupee count with a thoughtful split for stays,
-        transport and experiences.
-      </p>
-      <span className="ai-card-decoration">↗</span>
-    </article>
+          <article className="ai-glass-card">
+            <div className="ai-glass-icon ai-icon-purple">
+              🧠
+            </div>
 
-    <article className="ai-glass-card">
-      <div className="ai-glass-icon ai-icon-coral">🗺️</div>
-      <span className="ai-card-number">03 / EXPLORE</span>
-      <h3>AI Itinerary</h3>
-      <p>
-        Turn your destination and travel style into a personalized
-        day-by-day adventure.
-      </p>
-      <span className="ai-card-decoration">↗</span>
-    </article>
-  </div>
+            <span className="ai-card-number">
+              01 / DISCOVER
+            </span>
 
-  <div className="ai-planning-cta">
-    <div className="ai-cta-copy">
-      <span className="ai-cta-label">YOUR NEXT CHAPTER STARTS HERE</span>
-      <h3>Somewhere amazing is waiting.</h3>
-      <p>Let's make your next trip one to remember.</p>
-    </div>
+            <h3>Smart Recommendations</h3>
 
-    <Link to="/ai-planner" className="ai-glass-cta-button">
-      <span>✦</span> Start Planning <span className="ai-cta-arrow">→</span>
-    </Link>
-  </div>
+            <p>
+              Discover routes and travel options tailored
+              to your budget, preferences and available time.
+            </p>
 
-  <div className="ai-planning-footer">
-    <span>✦ MADE FOR YOUR KIND OF TRAVEL</span>
-    <span>EXPLORE MORE. WORRY LESS.</span>
-  </div>
-</section>
+            <span className="ai-card-decoration">↗</span>
+          </article>
 
+          <article className="ai-glass-card ai-glass-card-featured">
+            <div className="ai-glass-icon ai-icon-blue">
+              ✧
+            </div>
+
+            <span className="ai-card-number">
+              02 / OPTIMIZE
+            </span>
+
+            <h3>Budget Optimization</h3>
+
+            <p>
+              Make every rupee count with a thoughtful split
+              for stays, transport and experiences.
+            </p>
+
+            <span className="ai-card-decoration">↗</span>
+          </article>
+
+          <article className="ai-glass-card">
+            <div className="ai-glass-icon ai-icon-coral">
+              🗺️
+            </div>
+
+            <span className="ai-card-number">
+              03 / EXPLORE
+            </span>
+
+            <h3>AI Itinerary</h3>
+
+            <p>
+              Turn your destination and travel style into
+              a personalized day-by-day adventure.
+            </p>
+
+            <span className="ai-card-decoration">↗</span>
+          </article>
+
+        </div>
+
+        {/* AI CALL TO ACTION */}
+        <div className="ai-planning-cta">
+
+          <div className="ai-cta-copy">
+            <span className="ai-cta-label">
+              YOUR NEXT CHAPTER STARTS HERE
+            </span>
+
+            <h3>Somewhere amazing is waiting.</h3>
+
+            <p>
+              Let's make your next trip one to remember.
+            </p>
+          </div>
+
+          <Link
+            to="/ai-planner"
+            className="ai-glass-cta-button"
+          >
+            <span>✦</span>
+            Start Planning
+            <span className="ai-cta-arrow">→</span>
+          </Link>
+
+        </div>
+
+        <div className="ai-planning-footer">
+          <span>✦ MADE FOR YOUR KIND OF TRAVEL</span>
+          <span>EXPLORE MORE. WORRY LESS.</span>
+        </div>
+
+      </section>
+
+      {/* EXPLORE INDIA */}
       <ExploreIndia />
+
     </div>
   );
 }

@@ -1283,32 +1283,809 @@
   margin-right: auto !important;
 }
 
-/* Tablet */
-@media (max-width: 1024px) {
-  .cab-content {
-    margin-top: -245px !important;
+
+/* ==========================================
+   TRAVELEASE CABS — RESPONSIVE ALIGNMENT
+   Desktop styles above this section stay intact.
+   ========================================== */
+
+/* Prevent horizontal scrolling */
+.cab-page {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+.cab-page *,
+.cab-page *::before,
+.cab-page *::after {
+  box-sizing: border-box;
+}
+
+/* TABLET */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .cab-hero {
+    width: calc(100% - 40px);
+    height: 420px;
+    min-height: 420px;
+    margin: 20px auto 0;
+    border-radius: 18px;
   }
 
   .cab-hero-heading {
-    padding-top: 32px !important;
+    padding: 32px 20px 0 !important;
+  }
+
+  .cab-hero-heading h1,
+  .cab-hero-heading h1 span {
+    font-size: clamp(38px, 5vw, 52px) !important;
+  }
+
+  .cab-content {
+    width: 100%;
+    margin: -200px auto 0 !important;
+    padding: 0 24px;
+  }
+
+  .cab-search-panel {
+    padding: 24px 22px;
+  }
+
+  .cab-form-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .cab-journey-summary {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .cab-options-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-/* Mobile */
+/* MOBILE */
 @media (max-width: 640px) {
-  .cab-hero-heading {
-    padding: 28px 14px 0 !important;
+  .cab-page {
+    padding: 0 0 30px;
+    overflow-x: clip;
   }
 
-  .cab-hero-heading h1 {
-    font-size: 34px !important;
+  /* Hero section */
+  .cab-hero {
+    width: calc(100% - 24px);
+    height: 340px;
+    min-height: 340px;
+    margin: 12px auto 0;
+    border-radius: 15px;
+  }
+
+  .cab-hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .cab-hero-heading {
+    width: 100%;
+    padding: 26px 14px 0 !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .cab-hero-eyebrow {
+    margin: 0 0 13px !important;
+    padding: 7px 13px;
+    font-size: 10px !important;
+    letter-spacing: 1px !important;
+  }
+
+  .cab-hero-heading h1,
+  .cab-hero-heading h1 span {
+    max-width: 100%;
+    font-size: clamp(29px, 8vw, 38px) !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.7px !important;
+    text-align: center;
+    overflow-wrap: break-word;
   }
 
   .cab-hero-heading p {
-    font-size: 14px !important;
+    max-width: 290px;
+    margin: 11px 0 0 !important;
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+    text-align: center;
+  }
+
+  /* Search card */
+  .cab-content {
+    width: 100%;
+    max-width: 100%;
+    margin: -115px auto 0 !important;
+    padding: 0 12px;
+  }
+
+  .cab-search-panel {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px 16px;
+    border-radius: 15px;
+  }
+
+  .cab-search-heading {
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+
+  .cab-search-heading h2 {
+    font-size: 21px;
+    line-height: 1.3;
+  }
+
+  .cab-search-heading p {
+    font-size: 13px;
+  }
+
+  /* All form fields in one aligned column */
+  .cab-form-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 15px;
+    width: 100%;
+  }
+
+  .cab-field,
+  .cab-input-wrap {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .cab-field > label {
+    margin-bottom: 7px;
+    font-size: 11px;
+  }
+
+  .cab-input-wrap input {
+    width: 100%;
+    min-width: 0;
+    height: 49px;
+    font-size: 14px;
+  }
+
+  .cab-suggestions {
+    width: 100%;
+    max-width: 100%;
+    z-index: 100;
+  }
+
+  /* Search buttons */
+  .cab-search-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 11px;
+    margin-top: 18px;
+  }
+
+  .cab-location-button,
+  .cab-search-submit {
+    width: 100%;
+    min-width: 0;
+    min-height: 48px;
+    justify-content: center;
+    font-size: 13px;
+  }
+
+  .cab-message {
+    font-size: 12px;
+    overflow-wrap: anywhere;
+  }
+
+  /* Results heading */
+  .cab-results {
+    width: 100%;
+    margin: 28px auto 0;
+  }
+
+  .cab-results-title {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .cab-results-title h2 {
+    font-size: 24px;
+  }
+
+  .cab-results-title p {
+    font-size: 13px;
+  }
+
+  /* Journey details */
+  .cab-journey-summary {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 19px;
+    padding: 16px;
+    border-radius: 14px;
+  }
+
+  .cab-stop-details strong {
+    font-size: 13px;
+  }
+
+  .cab-journey-stats {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 9px;
+  }
+
+  .cab-journey-stats > div {
+    display: grid;
+    grid-template-columns: 35px minmax(0, 1fr);
+    align-items: center;
+    column-gap: 10px;
+    padding: 11px;
+  }
+
+  .cab-stat-icon {
+    grid-row: span 2;
+    margin: 0;
+  }
+
+  .cab-journey-stats small {
+    margin-bottom: 3px;
+    font-size: 9px;
+  }
+
+  .cab-journey-stats strong {
+    font-size: 13px;
+  }
+
+  /* Map */
+  .cab-map-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 7px;
+    margin: 24px 0 13px;
+  }
+
+  .cab-map-heading h3 {
+    font-size: 19px;
+  }
+
+  .cab-map-heading p {
+    font-size: 12px;
+  }
+
+  .cab-map-source {
+    font-size: 11px;
+  }
+
+  .cab-map {
+    width: 100%;
+    height: 270px;
+    margin-bottom: 27px;
+    border-radius: 12px;
+  }
+
+  .cab-map .leaflet-container {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Ride options */
+  .cab-options-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 7px;
+    margin: 24px 0 15px;
+  }
+
+  .cab-options-heading h3 {
+    font-size: 23px;
+  }
+
+  .cab-options-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .cab-option-card {
+    width: 100%;
+    min-width: 0;
+    padding: 18px;
+    border-radius: 14px;
+  }
+
+  .cab-option-card h3 {
+    font-size: 20px;
+  }
+
+  .cab-option-card > p {
+    min-height: 0;
+  }
+
+  .cab-fare strong {
+    font-size: 25px;
+  }
+
+  .cab-select-button {
+    min-height: 46px;
+  }
+
+  /* Disclaimer */
+  .cab-disclaimer {
+    align-items: flex-start;
+    gap: 9px;
+    padding: 13px;
+  }
+
+  .cab-disclaimer p {
+    font-size: 11px;
+  }
+}
+
+/* EXTRA SMALL PHONES */
+@media (max-width: 380px) {
+  .cab-hero {
+    width: calc(100% - 16px);
+    height: 325px;
+    min-height: 325px;
+  }
+
+  .cab-hero-heading {
+    padding: 23px 10px 0 !important;
+  }
+
+  .cab-hero-heading h1,
+  .cab-hero-heading h1 span {
+    font-size: 29px !important;
   }
 
   .cab-content {
-    margin-top: -205px !important;
+    margin-top: -105px !important;
+    padding: 0 8px;
+  }
+
+  .cab-search-panel {
+    padding: 17px 12px;
+  }
+
+  .cab-journey-summary {
+    padding: 13px;
+  }
+
+  .cab-option-card {
+    padding: 15px;
+  }
+}
+
+/* ==========================================
+   TRAVELEASE CABS — FINAL RESPONSIVE FIX
+   Keep all existing desktop styles unchanged
+   ========================================== */
+
+/* Prevent horizontal overflow */
+.cab-page {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+.cab-page,
+.cab-page * {
+  box-sizing: border-box;
+}
+
+/* TABLET — 641px to 1024px */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .cab-hero {
+    width: calc(100% - 40px);
+    height: 420px;
+    min-height: 420px;
+    margin: 20px auto 0;
+    border-radius: 18px;
+  }
+
+  .cab-hero-heading {
+    padding: 32px 20px 0 !important;
+  }
+
+  .cab-hero-heading h1,
+  .cab-hero-heading h1 span {
+    font-size: clamp(36px, 5vw, 50px) !important;
+  }
+
+  .cab-hero-heading p {
+    max-width: 90%;
+    font-size: 15px !important;
+  }
+
+  .cab-content {
+    width: 100%;
+    max-width: 100%;
+    margin: -180px auto 0 !important;
+    padding: 0 24px;
+  }
+
+  .cab-search-panel {
+    padding: 24px 22px;
+  }
+
+  .cab-form-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 17px;
+  }
+
+  .cab-journey-summary {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .cab-options-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* MOBILE — up to 640px */
+@media (max-width: 640px) {
+  .cab-page {
+    padding: 0 0 28px;
+    overflow-x: clip;
+  }
+
+  /* Hero */
+  .cab-hero {
+    width: calc(100% - 24px);
+    height: 350px;
+    min-height: 350px;
+    margin: 12px auto 0;
+    border-radius: 15px;
+  }
+
+  .cab-hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .cab-hero-heading {
+    width: 100%;
+    padding: 27px 14px 0 !important;
+    align-items: center;
+    text-align: center;
+  }
+
+  .cab-hero-eyebrow {
+    margin: 0 0 13px !important;
+    padding: 7px 13px;
+    font-size: 10px !important;
+    letter-spacing: 1px !important;
+  }
+
+  .cab-hero-heading h1,
+  .cab-hero-heading h1 span {
+    max-width: 100%;
+    font-size: clamp(29px, 7.8vw, 39px) !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.7px !important;
+    text-align: center;
+    overflow-wrap: break-word;
+  }
+
+  .cab-hero-heading p {
+    max-width: 290px;
+    margin: 11px auto 0 !important;
+    font-size: 13px !important;
+    line-height: 1.55 !important;
+    text-align: center;
+  }
+
+  /* Search card */
+  .cab-content {
+    width: 100%;
+    max-width: 100%;
+    margin: -95px auto 0 !important;
+    padding: 0 12px;
+  }
+
+  .cab-search-panel {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 21px 16px;
+    border-radius: 15px;
+  }
+
+  .cab-search-heading {
+    margin-bottom: 17px;
+  }
+
+  .cab-search-heading h2 {
+    font-size: 21px;
+    line-height: 1.3;
+  }
+
+  .cab-search-heading p {
+    font-size: 13px;
+  }
+
+  /* One input per row */
+  .cab-form-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 15px;
+    width: 100%;
+  }
+
+  .cab-field,
+  .cab-input-wrap {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .cab-field > label {
+    margin-bottom: 7px;
+    font-size: 11px;
+  }
+
+  .cab-input-wrap input {
+    width: 100%;
+    min-width: 0;
+    height: 50px;
+    padding-right: 10px;
+    font-size: 14px;
+  }
+
+  /* Location dropdown */
+  .cab-location-field {
+    position: relative;
+  }
+
+  .cab-suggestions {
+    right: 0;
+    left: 0;
+    width: 100%;
+    max-width: 100%;
+    max-height: 220px;
+    z-index: 100;
+  }
+
+  .cab-suggestion {
+    font-size: 12px;
+  }
+
+  /* Search buttons */
+  .cab-search-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 11px;
+    margin-top: 18px;
+  }
+
+  .cab-location-button,
+  .cab-search-submit {
+    width: 100%;
+    min-width: 0;
+    min-height: 49px;
+    justify-content: center;
+    font-size: 13px;
+  }
+
+  .cab-message {
+    font-size: 12px;
+    overflow-wrap: anywhere;
+  }
+
+  /* Results */
+  .cab-results {
+    width: 100%;
+    margin: 30px auto 0;
+  }
+
+  .cab-results-title {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .cab-results-title h2 {
+    font-size: 24px;
+  }
+
+  .cab-results-title p {
+    font-size: 13px;
+  }
+
+  .cab-route-badge {
+    font-size: 11px;
+  }
+
+  /* Journey summary */
+  .cab-journey-summary {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+    padding: 16px;
+    border-radius: 14px;
+  }
+
+  .cab-stop-details strong {
+    font-size: 13px;
+  }
+
+  .cab-journey-stats {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 9px;
+  }
+
+  .cab-journey-stats > div {
+    display: grid;
+    grid-template-columns: 35px minmax(0, 1fr);
+    align-items: center;
+    column-gap: 10px;
+    padding: 11px;
+  }
+
+  .cab-stat-icon {
+    grid-row: span 2;
+    margin: 0;
+  }
+
+  .cab-journey-stats small {
+    margin-bottom: 3px;
+    font-size: 9px;
+  }
+
+  .cab-journey-stats strong {
+    font-size: 13px;
+  }
+
+  /* Map */
+  .cab-map-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 7px;
+    margin: 24px 0 13px;
+  }
+
+  .cab-map-heading h3 {
+    font-size: 19px;
+  }
+
+  .cab-map-heading p {
+    font-size: 12px;
+  }
+
+  .cab-map-source {
+    font-size: 11px;
+  }
+
+  .cab-map {
+    width: 100%;
+    height: 270px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+  }
+
+  /* Override the inline 390px map height in Cabs.jsx */
+  .cab-map .leaflet-container {
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  /* Ride options */
+  .cab-options-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 7px;
+    margin: 24px 0 15px;
+  }
+
+  .cab-options-heading h3 {
+    font-size: 23px;
+  }
+
+  .cab-options-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .cab-option-card {
+    width: 100%;
+    min-width: 0;
+    padding: 18px;
+    border-radius: 14px;
+  }
+
+  .cab-option-card h3 {
+    font-size: 20px;
+  }
+
+  .cab-option-card > p {
+    min-height: 0;
+  }
+
+  .cab-fare strong {
+    font-size: 25px;
+  }
+
+  .cab-select-button {
+    min-height: 47px;
+  }
+
+  /* Disclaimer */
+  .cab-disclaimer {
+    align-items: flex-start;
+    gap: 9px;
+    padding: 13px;
+  }
+
+  .cab-disclaimer p {
+    font-size: 11px;
+    overflow-wrap: anywhere;
+  }
+}
+
+/* EXTRA SMALL PHONES */
+@media (max-width: 380px) {
+  .cab-hero {
+    width: calc(100% - 16px);
+    height: 330px;
+    min-height: 330px;
+    border-radius: 13px;
+  }
+
+  .cab-hero-heading {
+    padding: 23px 10px 0 !important;
+  }
+
+  .cab-hero-heading h1,
+  .cab-hero-heading h1 span {
+    font-size: 28px !important;
+  }
+
+  .cab-content {
+    margin-top: -85px !important;
+    padding: 0 8px;
+  }
+
+  .cab-search-panel {
+    padding: 18px 12px;
+  }
+
+  .cab-journey-summary {
+    padding: 13px;
+  }
+
+  .cab-option-card {
+    padding: 15px;
+  }
+}
+  @media (max-width: 640px) {
+  .cab-hero {
+    position: relative;
+    height: 350px;
+    overflow: visible;
+  }
+
+  .cab-content {
+    position: relative;
+    z-index: 5;
+    margin: -190px auto 0 !important;
+  }
+
+  .cab-search-panel {
+    position: relative;
+    z-index: 5;
+    border-radius: 20px;
   }
 }

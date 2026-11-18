@@ -493,3 +493,194 @@
     transition: none;
   }
 }
+
+/* =========================================
+   TRAVELEASE REGISTER — MOBILE RESPONSIVE FIX
+   Keeps desktop design and functionality unchanged
+========================================= */
+
+@media (max-width: 700px) {
+  .register-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    min-height: calc(100vh - 56px);
+    padding: 26px 16px 35px;
+    overflow-x: hidden;
+    overflow-y: visible;
+  }
+
+  .register-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-width: 460px;
+    min-width: 0;
+    gap: 26px;
+    margin: 0 auto;
+  }
+
+  .register-welcome {
+    width: 100%;
+    min-width: 0;
+    padding: 0;
+  }
+
+  .register-brand {
+    font-size: 23px;
+  }
+
+  .register-welcome-content {
+    width: 100%;
+    margin-top: 25px;
+  }
+
+  .register-welcome-content > h1 {
+    max-width: 100%;
+    font-size: clamp(32px, 8vw, 42px);
+    line-height: 1.15;
+    overflow-wrap: break-word;
+  }
+
+  .register-welcome-description {
+    max-width: 100%;
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .register-benefits {
+    width: 100%;
+    gap: 15px;
+    margin-top: 22px;
+  }
+
+  .register-benefit {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .register-benefit > div {
+    min-width: 0;
+  }
+
+  .register-benefit h3 {
+    font-size: 13px;
+  }
+
+  .register-benefit p {
+    font-size: 12px;
+  }
+
+  .register-welcome-footer {
+    margin-top: 20px;
+    font-size: 11px;
+  }
+
+  /* Registration card: use the full available width */
+  .register-card {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    justify-self: stretch;
+    margin: 0;
+    padding: 27px 22px 23px;
+    border-radius: 18px;
+  }
+
+  .register-card-heading {
+    margin-bottom: 22px;
+  }
+
+  .register-card-heading h2 {
+    font-size: 29px;
+  }
+
+  .register-form {
+    width: 100%;
+    gap: 16px;
+  }
+
+  .register-field {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .register-field input {
+    width: 100%;
+    min-width: 0;
+    height: 48px;
+    font-size: 14px;
+  }
+
+  .register-password-wrap {
+    width: 100%;
+  }
+
+  .register-submit {
+    width: 100%;
+    min-height: 49px;
+  }
+
+  .register-login-prompt {
+    text-align: center;
+    line-height: 1.7;
+  }
+
+  .register-card-footer {
+    line-height: 1.6;
+  }
+
+  .register-copyright {
+    position: static;
+    width: 100%;
+    margin-top: 24px;
+    padding: 0 5px;
+    font-size: 10px;
+    line-height: 1.6;
+  }
+}
+
+/* Extra-small phones */
+@media (max-width: 380px) {
+  .register-page {
+    padding: 22px 13px 30px;
+  }
+
+  .register-layout {
+    gap: 22px;
+  }
+
+  .register-welcome-content {
+    margin-top: 20px;
+  }
+
+  .register-welcome-content > h1 {
+    font-size: 32px;
+  }
+
+  .register-card {
+    padding: 23px 17px 20px;
+  }
+
+  .register-card-heading h2 {
+    font-size: 27px;
+  }
+}
+
+/* Prevent horizontal overflow on all mobile sizes */
+@media (max-width: 700px) {
+  .register-page,
+  .register-layout,
+  .register-card {
+    box-sizing: border-box;
+  }
+
+  .register-background-video,
+  .register-video-overlay {
+    max-width: 100%;
+  }
+}
